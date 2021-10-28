@@ -1,0 +1,66 @@
+.navbar-container {
+  background: linear-gradient(-180deg, #505da8, rgb(115, 183, 228));
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+
+  .logo {
+    max-width: 500px;
+    width: 30%;
+    display: flex;
+    h1 {
+      font-size: 45px;
+      margin: 7px 20px;
+      color: white;
+      font-family: "Courier New", Courier, monospace;
+    }
+    img {
+      width: 65px;
+    }
+  }
+  .navbar-search {
+    max-width: 500px;
+    width: 40%;
+    margin: 15px 0;
+    .input-search {
+      width: 100%;
+    }
+  }
+  .navbar-infomation {
+    max-width: 400px;
+    width: 30%;
+    display: flex;
+    .icon {
+      color: rgb(255, 255, 255);
+      font-size: 15px;
+      cursor: pointer;
+      margin-left: 10%;
+      width: 25%;
+      .icon-cart {
+        margin-top: 22px;
+      }
+    }
+    .menu {
+      width: 70%;
+      .menu-open {
+        width: 100%;
+        height: 100%;
+        text-align: right;
+        .icon-menu {
+          padding-top: 22px;
+          font-size: 30px;
+          height: 60px;
+        }
+      }
+      .menu-close{
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          background-color:rgb(82, 189, 197);
+          z-index: 1;
+          transform: translateX(21%);
+          overflow-y: scroll;
+      }
+    }
+  }
+}
