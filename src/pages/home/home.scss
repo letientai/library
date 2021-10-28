@@ -1,0 +1,65 @@
+.home-container {
+    height: 2000px;
+    position: relative;
+  .home-top {
+    .content-top {
+      height: 400px;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-y: center;
+      display: block;
+      background-image: url("https://images6.alphacoders.com/372/thumb-1920-372162.jpg");
+      .content {
+        position: absolute;
+        width: 100%;
+        .btn-category {
+          color: white;
+          height: 35px;
+          border: 1px solid white;
+          width: 100px;
+          font-size: 15px;
+          margin: 50px 70px 20px;
+          display: flex;
+          cursor: pointer;
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.12);
+          }
+          p {
+            margin: 0;
+            padding: 5px;
+          }
+          .icon-angle-down {
+            padding: 7px;
+            font-size: 17px;
+          }
+        }
+        .category {
+          margin: 20px 70px;
+          width: 55%;
+          background-color: rgba(0, 0, 0, 0.42);
+          display: none;
+          color: rgb(255, 255, 255);
+          transform: translateY(30px);
+          text-shadow: 0px 0.3px 0.8px rgba(0, 0, 0, 0.049),
+            0.1px 0.6px 1.9px rgba(0, 0, 0, 0.071),
+            0.2px 1.2px 3.5px rgba(0, 0, 0, 0.087),
+            0.3px 1.9px 5.8px rgba(0, 0, 0, 0.103),
+            0.5px 3.2px 9.5px rgba(0, 0, 0, 0.119),
+            0.9px 5.5px 16.6px rgba(0, 0, 0, 0.141),
+            2px 12px 36px rgba(0, 0, 0, 0.19);
+          ul {
+              margin: 15px;
+            li {
+              margin: 10px;
+              cursor: pointer;
+              &:hover{
+                border-bottom: 1px solid white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
