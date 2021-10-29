@@ -1,9 +1,10 @@
 .navbar-container {
-  background: linear-gradient(-180deg, #505da8, rgb(115, 183, 228));
+  background: linear-gradient(-180deg, #8a99ee, rgb(143, 175, 211));
   display: flex;
   justify-content: space-around;
-  position: relative;
-
+  position: fixed;
+  z-index: 5;
+  width: 100%;
   .logo {
     max-width: 500px;
     width: 30%;
@@ -32,13 +33,19 @@
     display: flex;
     .icon {
       color: rgb(255, 255, 255);
-      font-size: 15px;
+      font-size: 16px;
       cursor: pointer;
       margin-left: 10%;
-      width: 25%;
+      width: 30%;
       .icon-cart {
-        margin-top: 22px;
+        border: 1px solid rgb(255, 255, 255);
+        margin-top: 17px;
+        width: 35px;
+        padding: 7px;
+        height: 35px;
+        border-radius: 100%;
       }
+      
     }
     .menu {
       width: 70%;

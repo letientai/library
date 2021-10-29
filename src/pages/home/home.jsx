@@ -1,15 +1,29 @@
-import React from "react";
-import { Icon, Segment } from "semantic-ui-react";
+import React, { useState, useEffect } from "react";
+import { Icon, Segment, Label } from "semantic-ui-react";
 import Navbar from "../../components/navbar/navbar";
+import Card from "../../components/card/card";
+import InfoData from "../../assets/data/Infodata";
 import "./home.scss";
 function Home() {
+  const [data, setData] = useState([]);
+  const [option, setOption] = useState(1);
+  const [label, setLabel] = useState("Tất cả");
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
+    setData(InfoData);
+  };
+
   const open = () => {
     let menu = document.getElementById("category");
-    if (menu.style.display == "flex") {
+    if (menu.style.display === "flex") {
       menu.style.transition = `ease 0.1s`;
-      var id = setInterval(frame, 0.1);
-      var pos = 0;
-      var op = 1.5;
+      let id = setInterval(frame, 0.1);
+      let pos = 0;
+      let op = 1.5;
       function frame() {
         if (pos === 30) {
           menu.style.display = "none";
@@ -23,9 +37,9 @@ function Home() {
       }
     } else {
       menu.style.transition = `ease 0.05s`;
-      var id = setInterval(frame, 0.1);
-      var pos = 30;
-      var op = 0;
+      let id = setInterval(frame, 0.1);
+      let pos = 30;
+      let op = 0;
       function frame() {
         if (pos === 0) {
           clearInterval(id);
@@ -42,9 +56,9 @@ function Home() {
   const close = () => {
     let menu = document.getElementById("category");
     menu.style.transition = `ease 0.1s`;
-    var id = setInterval(frame, 0.1);
-    var pos = 0;
-    var op = 1.5;
+    let id = setInterval(frame, 0.1);
+    let pos = 0;
+    let op = 1.5;
     function frame() {
       if (pos === 30) {
         menu.style.display = "none";
@@ -57,6 +71,26 @@ function Home() {
       }
     }
   };
+
+  const onChangeOption = (option) => {
+    setOption(option)
+    if(option === 1) {
+      setData(InfoData.sort((a, b) => parseFloat(a.id) - parseFloat(b.id)));
+      setLabel("Tất cả");
+    }
+    if(option === 2) {
+      setData(InfoData.sort((a, b) => parseFloat(b.sold) - parseFloat(a.sold)));
+      setLabel("Bán chạy");
+    }
+    if(option === 3) {
+      setData(InfoData.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)));
+      setLabel("Giá thấp");
+    }
+    if(option === 4) {
+      setData(InfoData.sort((a, b) => parseFloat(b.price) - parseFloat(a.price)));
+      setLabel("Giá cao");
+    }
+  }
 
   return (
     <div className="home-container">
@@ -104,7 +138,39 @@ function Home() {
                 <li>Bài học kinh doanh</li>
                 <li>Đầu tư chứng khoán</li>
               </ul>
-              <Icon name="x" onClick={close} style={{cursor: "pointer"}}/>
+              <Icon name="x" onClick={close} style={{ cursor: "pointer" }} />
+            </Segment>
+          </div>
+        </div>
+      </div>
+      <div className="main">
+        <div className="main-content">
+          <div className="menu-right"></div>
+          <div className="content">
+            <div className="menu-content">
+              <p className={option === 1 ? "optionChoose" : "option"} onClick={() => onChangeOption(1)}>
+                Tất cả
+              </p>
+              <p className={option === 2 ? "optionChoose" : "option"} onClick={() => onChangeOption(2)}>
+                Bán chay
+              </p>
+              <p className={option === 3 ? "optionChoose" : "option"} onClick={() => onChangeOption(3)}>
+                Giá thấp
+              </p>
+              <p className={option === 4 ? "optionChoose" : "option"} onClick={() => onChangeOption(4)}>
+                Giá cao
+              </p>
+            </div>
+            <Segment className="products">
+              <Label as="a" color="blue" ribbon>
+                {label}
+              </Label>
+              {/* <h1>{count}</h1> */}
+              <div className="product">
+                {data.map((item) => (
+                  <Card product={item} key={item.id}/>
+                ))}
+              </div>
             </Segment>
           </div>
         </div>
