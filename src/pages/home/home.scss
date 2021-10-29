@@ -1,25 +1,26 @@
 .home-container {
-    height: 2000px;
-    position: relative;
+  height: 2000px;
+  position: relative;
   .home-top {
     .content-top {
-      height: 400px;
+      padding-top: 80px;
+      height: 500px;
       width: 100%;
       background-repeat: no-repeat;
       background-size: cover;
       background-position-y: center;
       display: block;
-      background-image: url("https://images6.alphacoders.com/372/thumb-1920-372162.jpg");
+      background-image: url("https://wallpaperaccess.com/full/5487974.jpg");
       .content {
         position: absolute;
         width: 100%;
         .btn-category {
-          color: white;
+          color: rgb(255, 255, 255);
           height: 35px;
           border: 1px solid white;
           width: 100px;
           font-size: 15px;
-          margin: 50px 70px 20px;
+          margin: 20px 70px 20px;
           display: flex;
           cursor: pointer;
           &:hover {
@@ -49,14 +50,67 @@
             0.9px 5.5px 16.6px rgba(0, 0, 0, 0.141),
             2px 12px 36px rgba(0, 0, 0, 0.19);
           ul {
-              margin: 15px;
+            margin: 15px;
             li {
               margin: 10px;
               cursor: pointer;
-              &:hover{
+              &:hover {
                 border-bottom: 1px solid white;
               }
             }
+          }
+        }
+      }
+    }
+  }
+  .main {
+    width: 90%;
+    margin: auto;
+    max-width: 1350px;
+    .main-content {
+      margin-top: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .menu-right {
+        width: 24%;
+        background-color: rgb(238, 238, 238);
+
+      }
+      .content {
+        width: 75%;
+        .menu-content{
+          display: flex;
+          text-align: center;
+          background-color: rgb(238, 238, 238);
+          border: 1px solid rgb(230, 230, 229);
+          p{
+            cursor: pointer;
+            margin: 0 20px;
+            // margin-bottom: 3px;
+            height: 100%;
+            padding: 10px;
+            width: 90px;
+            &:hover{
+              border-bottom: 3px solid rgb(102, 179, 231);
+              margin-bottom: 0px;
+            }
+          }
+          
+          .option{
+            margin-bottom: 0px;
+          }
+          .optionChoose{
+            border-bottom: 3px solid rgb(102, 179, 231);
+            margin-bottom: 0px;
+          }
+        }
+        .products{
+          // background-color: rgb(238, 238, 238);
+          .product{
+            flex-wrap: wrap;
+            justify-content: space-around;
+            display: flex;
           }
         }
       }
