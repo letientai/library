@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Icon, Segment, Label } from "semantic-ui-react";
+import { Icon, Segment, Label, Pagination } from "semantic-ui-react";
 import Navbar from "../../components/navbar/navbar";
 import Card from "../../components/card/card";
 import InfoData from "../../assets/data/Infodata";
@@ -7,6 +7,7 @@ import "./home.scss";
 function Home() {
   const [data, setData] = useState([]);
   const [option, setOption] = useState(1);
+  const [page, setPage] = useState(1);
   const [label, setLabel] = useState("Tất cả");
 
   useEffect(() => {
@@ -14,7 +15,7 @@ function Home() {
   }, []);
 
   const fetchData = () => {
-    setData(InfoData);
+    setData(InfoData.slice(0, 12));
   };
 
   const open = () => {
@@ -75,20 +76,24 @@ function Home() {
   const onChangeOption = (option) => {
     setOption(option);
     if (option === 1) {
+      setPage(1);
       setData(InfoData.sort((a, b) => parseFloat(a.id) - parseFloat(b.id)));
       setLabel("Tất cả");
     }
     if (option === 2) {
+      setPage(1);
       setData(InfoData.sort((a, b) => parseFloat(b.sold) - parseFloat(a.sold)));
       setLabel("Bán chạy");
     }
     if (option === 3) {
+      setPage(1);
       setData(
         InfoData.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
       );
       setLabel("Giá thấp");
     }
     if (option === 4) {
+      setPage(1);
       setData(
         InfoData.sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
       );
@@ -96,11 +101,30 @@ function Home() {
     }
   };
 
+  const changeData = async (e, { activePage }) => {
+    setPage(activePage)
+    if (activePage === 1) {
+      setData(InfoData.slice(0, 12));
+      window.scrollTo(0, 0);
+    }
+    if (activePage === 2) {
+      setData(InfoData.slice(13, 24));
+      window.scrollTo(0, 0);
+    }
+    if (activePage === 3) {
+      setData(InfoData.slice(25, 36));
+      window.scrollTo(0, 0);
+    }
+    // await setData1(data.slice(0, 10));
+    // await console.log("data12: ", data1);
+  };
+
   return (
+    
     <div className="home-container">
       <div className="home-top">
         <Navbar />
-        <div className="content-top">
+        <div className="content-Top">
           <div className="content">
             <div className="btn-category" onClick={open}>
               <p>Thể loại</p>
@@ -187,11 +211,17 @@ function Home() {
                   <Card product={item} key={item.id} />
                 ))}
               </div>
-              <div className="view-more">
-                <p>View more</p>
-                <div className="icon">
-                  <Icon name="angle right" />
-                </div>
+              <div className="pagination">
+                <Pagination
+                  boundaryRange={0}
+                  activePage={page}
+                  ellipsisItem={null}
+                  firstItem={null}
+                  lastItem={null}
+                  siblingRange={1}
+                  totalPages={3}
+                  onPageChange={changeData}
+                />
               </div>
             </Segment>
           </div>
