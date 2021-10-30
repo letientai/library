@@ -73,24 +73,28 @@ function Home() {
   };
 
   const onChangeOption = (option) => {
-    setOption(option)
-    if(option === 1) {
+    setOption(option);
+    if (option === 1) {
       setData(InfoData.sort((a, b) => parseFloat(a.id) - parseFloat(b.id)));
       setLabel("Tất cả");
     }
-    if(option === 2) {
+    if (option === 2) {
       setData(InfoData.sort((a, b) => parseFloat(b.sold) - parseFloat(a.sold)));
       setLabel("Bán chạy");
     }
-    if(option === 3) {
-      setData(InfoData.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)));
+    if (option === 3) {
+      setData(
+        InfoData.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
+      );
       setLabel("Giá thấp");
     }
-    if(option === 4) {
-      setData(InfoData.sort((a, b) => parseFloat(b.price) - parseFloat(a.price)));
+    if (option === 4) {
+      setData(
+        InfoData.sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
+      );
       setLabel("Giá cao");
     }
-  }
+  };
 
   return (
     <div className="home-container">
@@ -148,28 +152,46 @@ function Home() {
           <div className="menu-right"></div>
           <div className="content">
             <div className="menu-content">
-              <p className={option === 1 ? "optionChoose" : "option"} onClick={() => onChangeOption(1)}>
-                Tất cả
+              <p
+                className={option === 1 ? "optionChoose" : "option"}
+                onClick={() => onChangeOption(1)}
+              >
+                Tất cả{" "}
               </p>
-              <p className={option === 2 ? "optionChoose" : "option"} onClick={() => onChangeOption(2)}>
+              <p
+                className={option === 2 ? "optionChoose" : "option"}
+                onClick={() => onChangeOption(2)}
+              >
                 Bán chay
               </p>
-              <p className={option === 3 ? "optionChoose" : "option"} onClick={() => onChangeOption(3)}>
+              <p
+                className={option === 3 ? "optionChoose" : "option"}
+                onClick={() => onChangeOption(3)}
+              >
                 Giá thấp
               </p>
-              <p className={option === 4 ? "optionChoose" : "option"} onClick={() => onChangeOption(4)}>
+              <p
+                className={option === 4 ? "optionChoose" : "option"}
+                onClick={() => onChangeOption(4)}
+              >
                 Giá cao
               </p>
             </div>
             <Segment className="products">
               <Label as="a" color="blue" ribbon>
-                {label}
+                <h4>{label}</h4>
               </Label>
               {/* <h1>{count}</h1> */}
               <div className="product">
                 {data.map((item) => (
-                  <Card product={item} key={item.id}/>
+                  <Card product={item} key={item.id} />
                 ))}
+              </div>
+              <div className="view-more">
+                <p>View more</p>
+                <div className="icon">
+                  <Icon name="angle right" />
+                </div>
               </div>
             </Segment>
           </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Icon } from "semantic-ui-react";
 import "./card.scss";
+import Rating from '@mui/material/Rating';
 
 const Card = (props) => {
   const item = props.product;
@@ -18,13 +19,14 @@ const Card = (props) => {
       </div>
       <div className="row2">
 
-        <span>Đã bán: {item.sold}</span>
-        <div className="icon">
+        <p>Đã bán: {item.sold}</p>
+        <div className="icon-start">
+          <Rating name="half-rating-read" defaultValue={item.rating} precision={0.5} readOnly className="start"/>
+          {/* <Icon name="star" className="start" />
           <Icon name="star" className="start" />
           <Icon name="star" className="start" />
           <Icon name="star" className="start" />
-          <Icon name="star" className="start" />
-          <Icon name="star" className="start" />
+          <Icon name="star" className="start" /> */}
         </div>
       </div>
     </div>
