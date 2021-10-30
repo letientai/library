@@ -56,7 +56,7 @@ const Navbar = () => {
           />
           <Popup
             trigger={<Icon name="user" className="icon-cart" />}
-            content="Đăng nhập"
+            content="Đăng nhập/Đăng ký"
             position="bottom center"
           />
         </div>
