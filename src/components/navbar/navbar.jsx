@@ -7,14 +7,14 @@ const Navbar = () => {
   const open = () => {
     let animation = document.getElementById("menu-close");
     animation.style.transition = `ease 0.7s`;
-    var id = setInterval(frame, 0.05);
-    var pos = 21;
+    var id = setInterval(frame, 0.01);
+    var pos = 300;
     function frame() {
       if (pos === 0) {
         clearInterval(id);
       } else {
-        pos--;
-        animation.style.transform = `translateX(${pos}%)`;
+        pos -= 30;
+        animation.style.transform = `translateX(${pos}px)`;
       }
     }
   };
@@ -22,14 +22,14 @@ const Navbar = () => {
   const close = () => {
     let animation = document.getElementById("menu-close");
     animation.style.transition = `ease 0.7s`;
-    var id = setInterval(frame, 0.05);
+    var id = setInterval(frame, 0.01);
     var pos = 0;
     function frame() {
-      if (pos === 21) {
+      if (pos === 300) {
         clearInterval(id);
       } else {
-        pos++;
-        animation.style.transform = `translateX(${pos}%)`;
+        pos += 30;
+        animation.style.transform = `translateX(${pos}px)`;
       }
     }
   };
@@ -48,7 +48,7 @@ const Navbar = () => {
         />
       </div>
       <div className="navbar-infomation">
-        <div className="icon">
+        <div className="Icon">
           <Popup
             trigger={<Icon name="shopping cart" className="icon-cart" />}
             content="Giỏ hàng của bạn"

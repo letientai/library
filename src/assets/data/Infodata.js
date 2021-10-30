@@ -2,6 +2,7 @@ const InfoData = [
     {   
         id: 1,
         sold: 124,
+        rating: 4.5,
         theloai:"Cổ tích & thần thoại",
         name: 'Nghìn Lẻ Một Đêm Và Văn Minh A Rập',
         intro1: 'Những câu chuyện tương truyền do nàng Sheherazade kể hầu bạo chúa Shariar trong nghìn lẻ một đêm là di sản tuyệt vời của sáng tác truyền khẩu dân gian nhân loại, tồn tại đến nay hơn nghìn năm.',
@@ -12,6 +13,7 @@ const InfoData = [
     {
         id: 2,
         sold: 30,
+        rating: 3,
         theloai:"Tiểu thuyết",
         name:'Bố Già',
         intro1:'Thế giới ngầm được phản ánh trong tiểu thuyết Bố già là sự gặp gỡ giữa một bên là ý chí cương cường và nền tảng gia tộc chặt chẽ theo truyền thống Mafia xứ Sicily với một bên là xã hội Mỹ nhập nhằng đen trắng, mảnh đất màu mỡ cho những cơ hội làm ăn bất chính hứa hẹn những món lợi kếch xù. Trong thế giới ấy, hình tượng Bố già được tác giả dày công khắc họa đã trở thành bức chân dung bất hủ trong lòng người đọc.',
@@ -22,6 +24,7 @@ const InfoData = [
     {
         id: 3,
         sold: 41,
+        rating: 3,
         theloai:"Cổ tích & thần thoại",
         name:'Truyện Cổ Grimm',
         intro1:'Không có bạn nhỏ nào là không biết đến cô bé Lọ Lem, cô bé quàng khăn đỏ, chó sói và bảy chú dê con… Những nhân vật ấy bước ra từ bộ “Truyện Cổ Grimm”, một viên ngọc sáng lung linh trong kho tàng văn học truyện cổ tích thế giới. Với ngôn ngữ hài hước, nhẹ nhàng, tình tiết hấp dẫn, “Truyện Cổ Grimm” thu hút rất nhiều bạn nhỏ qua nhiều thế hệ.',
@@ -33,6 +36,7 @@ const InfoData = [
         id: 4,
         sold: 341,
         theloai:"Tiểu thuyết",
+        rating: 5,
         name:'Chúa Tể Những Chiếc Nhẫn',
         intro1:'Kỷ Đệ Nhất, các Valar kết liễu Morgoth.Kỷ Đệ Nhị, Tiên và Người đánh bại Sauron.Và nay, giữa Kỷ Đệ Tam tưởng đã hòa bình, báu vật của Sauron lại ngóc đầu trong lòng núi. Và thêm một anh chàng Hobbit bỗng thấy mình từ biệt tổ ấm yên bình, dấn vào cuộc phiêu lưu mỗi bước lại thêm xa, thêm gian nan, thêm hệ trọng.',
         intro2:'Bên cậu sát cánh Đoàn Hộ Nhẫn, Con Người cùng Phù Thủy, Tiên với Người Lùn, vượt đèo cả đầm sâu, qua rừng vàng mỏ tối, vào sinh ra tử hòng lần nữa cứu Trung Địa khỏi rơi vào tay CHÚA TỂ NHỮNG CHIẾC NHẪN.',
@@ -42,6 +46,7 @@ const InfoData = [
     {
         id: 5,
         sold: 142,
+        rating: 4.5,
         theloai:"Cổ tích & thần thoại",
         name:'Odyssey – Những Cuộc Phiêu Lưu Của Odysseus',
         intro1:'Sau khi cuộc chiến thành Troy kết thúc, các vị anh hùng của phe Hy Lạp lên đường trở về quê hương trong chiến thắng. Duy chỉ có Odysseus vẫn bặt vô âm tín suốt hơn mười năm ròng. Odyssey – Những cuộc phiêu lưu của Odysseus là hành trình trở về đầy gian nan của người anh hùng xứ Ithaca: trở thành tù nhân của nữ thần Calypso, đối mặt với cơn giận dữ của thần biển Poseidon, chiến đấu với những kẻ cầu hôn,…',
@@ -52,6 +57,7 @@ const InfoData = [
     {
         id: 6,
         sold: 116,
+        rating: 4,
         theloai:"Cổ tích & thần thoại",
         name:'Aeneid – Những Cuộc Phiêu Lưu Của Aeneas',
         intro1:'Sau khi thành Troy thất thủ, một người anh hùng của quân Troy đã cõng theo cha già, đưa vợ con thoát khỏi biển lửa, băng qua Địa Trung Hải, vượt nhiều vùng đất với bao gian nan thử thách để cuối cùng đến được nơi sau này chính là thành Rome. Vị anh hùng ấy là Aeneas, người vẫn được coi là tổ tiên của người La Mã.',
@@ -62,6 +68,7 @@ const InfoData = [
     {
         id: 7,
         sold: 87,
+        rating: 3.5,
         theloai:"Tiểu thuyết",
         name:'Forrest Gump',
         intro1:'Cuốn sách này được viết ra không nhằm cho ta một bài học về tài chính hay kinh doanh gì cả. Một cuốn sách được viết với phong cách nhẹ nhàng, đơn giản và dễ hiểu. Nó không cỗ vũ chúng ta tin vào số mệnh hay vận may rủi. Cuốn sách đơn giản cho chúng ta nhìn cuộc sống qua một lăng kính khác, lăng kính của một người có chỉ số IQ thấp, một người mà chúng ta cho rằng bất thường hơn so với số đông còn lại. Chúng ta biết và hiểu được cuộc sống cũng như cách suy nghĩ của Forrest Gump. Nhờ đó, ta thấy cuộc đời thực ra rất đơn giản, như cách mà Forrest Gump sống và trải nghiệm nó vậy.',
@@ -72,6 +79,7 @@ const InfoData = [
     {
         id: 8,
         sold: 49,
+        rating: 3,
         theloai:"Cổ tích & thần thoại",
         name:'Theseus Và Cuộn Chỉ Của Ariadne',
         intro1:'Từ nguồn gốc của thần Zeus đến sự ra đời của Minos, từ mê cung dành cho Minotaur đến cuộc đối đầu giữa Minos và thành Athens, từ cơn giận dữ của Medea đến cuộc gặp giữa nàng Ariadne và Theseus… Thesus và cuộn chỉ của Ariadne chính là những câu chuyện đầu tiên dẫn dắt độc giả vào thế giới đầy cuốn hút của thần thoại Hy Lạp',
@@ -82,6 +90,7 @@ const InfoData = [
     {
         id: 9,
         sold: 211,
+        rating: 4,
         theloai:"Cổ tích & thần thoại",
         name:'Thần Thoại La Mã',
         intro1:'Nghe những lời sấm truyền mách bảo, hoàng tử thành Troie là Énée, con trai của nữ thần tình yêu và sắc đẹp Vénus, cùng những chiến binh kiên cường đã quyết tâm tìm đến vùng đất Italie để tái sinh dân tộc, xây dựng đế chế hùng mạnh mới. Nhưng Junon – nữ hoàng của các vị thần vẫn luôn thù ghét và tìm cách ngăn cản bước chân Định mệnh đem tương lai xán lạn đến cho họ.',
@@ -92,6 +101,7 @@ const InfoData = [
     {
         id: 10,
         sold: 118,
+        rating: 3.5,
         theloai:"Tiểu thuyết",
         name:'Sự Im Lặng Của Bầy Cừu',
         intro1:'Sự Im Lặng Của Bầy Cừu kể về vụ án giết người hàng loạt xảy ra nhưng không để lại dấu vết. Điều kỳ lạ là Lecter – một bác sĩ tâm lý bị tâm thần đang điều trị tại Dưỡng Trí Viện biết rất rõ về hành vi của kẻ sát nhân nhưng chỉ im lặng. Cho đến khi con gái của thượng nghị sĩ bị bắt cóc thì cuộc đối đầu của nữ nhân viên thực tập FBI và vị bác sĩ tâm thần đã đến cực điểm. Cuối cùng tất cả cũng đều lộ diên, thủ phạm là một tên có nhân cách bệnh hoạn, một kẻ tâm thần rối loạn cựu kỳ nguy hiểm…',
@@ -102,6 +112,7 @@ const InfoData = [
     {
         id: 11,
         sold: 152,
+        rating: 4.5,
         theloai:"Tiểu thuyết",
         name:'Khi Lỗi Thuộc Về Những Vì Sao',
         intro1:'Mặc dù phép màu y học đã giúp thu hẹp khối u và ban thêm vài năm sống cho Hazel nhưng cuộc đời cô bé đang ở vào giai đoạn cuối, từng chương kế tiếp được viết theo kết quả chẩn đoán. Nhưng khi có một nhân vật điển trai tên là Augustus Waters đột nhiên xuất hiện tại Hội Tương Trợ Bệnh Nhi Ung Thư, câu chuyện của Hazel sắp được viết lại hoàn toàn.',
@@ -112,6 +123,7 @@ const InfoData = [
     {
         id: 12,
         sold: 215,
+        rating: 4,
         theloai:"Cổ tích & thần thoại",
         name:'Thần Thoại Bắc Âu',
         intro1:'Từ thời xa xưa, người dân xứ Scandinavia đã xây dựng cho mình một hệ thống tín ngưỡng, niềm tin đặc sắc và riêng biệt lý giải về nguồn gốc, khởi nguyên và quá trình phát triển của thế giới. Với những câu chuyện quen thuộc về 9 thế giới trên cây tần bì Yggdrasil, thần tới cao Odin, thần sấm sét Thor, thần khổng lồ Loki, người Elf và người lùn, Ragnarok – hoàng hôn của các vị thần… Thần Thoại Bắc Âu là một trong những thần thoại lớn nhất, nổi tiếng nhất và gây ảnh hưởng nhiều nhất hành tinh.',
@@ -122,6 +134,7 @@ const InfoData = [
     {
         id: 13,
         sold: 325,
+        rating: 4,
         theloai:"Tiểu thuyết",
         name:'Từ Thăm Thẳm Lãng Quên',
         intro1:'Một câu chuyện bỗng nhiên hiện ra từ quá khứ mịn màng. Lúc nào người ta cũng tự hỏi, làm cách nào, bằng thứ giả thuật kim nào, mà tác giả có thể tạo ra những ký ức tinh xảo đến thế.',
@@ -132,6 +145,7 @@ const InfoData = [
     {
         id: 14,
         sold: 325,
+        rating: 5,
         theloai:"Cổ tích & thần thoại",
         name:'Thần Thoại Bắc Âu',
         intro1:'Những câu chuyện kinh điển cùng với những minh họa sinh động về những vị thần, những anh hùng và quái vật đã làm sống dậy bức tranh “Thần thoại Bắc Âu” đầy ấn tượng, bao gồm thần Sấm Thor, Odin, người Cha chung và cả thần Lừa gạt Loki. Với lối kể chuyện nên thơ của tác giả danh tiếng Donna Jo Napoli đã tăng thêm phần kịch tính cho những câu chuyện nhuốm màu thời gian của người Scandinavia cổ đại.',
@@ -142,6 +156,7 @@ const InfoData = [
     {
         id: 15,
         sold: 517,
+        rating: 5,
         theloai:"Cổ tích & thần thoại",
         name:'Thần Thoại Hy Lạp (Tái Bản 2018)',
         intro1:'Thần thoại Hy Lạp, một di sản văn hóa của nhân dân Hy Lạp, từ lâu đã trở thành một giá trị phổ biến vô cùng quý báu của gia tài văn hóa nhân loại. Thật vậy, hiếm có thần thoại của dân tộc nào trên thế giới lại luôn luôn được tái sinh như thần thoại Hy Lạp, lại luôn luôn có mặt trong đời sống hằng ngày như thần thoại Hy Lạp.',
@@ -152,6 +167,7 @@ const InfoData = [
     {
         id: 16,
         sold: 251,
+        rating: 4.5,
         theloai:"Cổ tích & thần thoại",
         name:'Các truyền thuyết của người Celt',
         intro1:'Và cuối cùng trong Top 10 thần thoại nổi tiếng nhất Thế giới là Các truyền thuyết của người Celt. Người Celt là một tập hợp các bộ tộc người Châu Âu cổ, từng sinh sống ở khắp các vùng Châu Âu. Sau sự bành trướng của Đế chế La Mã, sau đó là của các tộc người Anglo-Saxon, người Viking, người Celt ngày càng thu hẹp lại đến các vùng hẻo lánh ở Châu Âu, giờ tập trung chủ yếu ở Ireland, Wales, Scotland và Macedonia.',
@@ -162,6 +178,7 @@ const InfoData = [
     {
         id: 17,
         sold: 115,
+        rating: 3.5,
         theloai:"Tiểu thuyết",
         name:'Ở Quán Cà Phê Của Tuổi Trẻ Lạc Lối',
         intro1:'Tuổi trẻ là một khối dồn nén. Nó có sức phá hoại đến nỗi, vào một thời điểm những tưởng đã quay lưng với cuộc đời, ta chợt nhìn lại và thấy vần vũ quanh mình những gương mặt, mối tình, những lần gặp gỡ, các cảm xúc chân thực và sống động như dao cứa. Đó là tình cảnh của Roland, nhân vật tuy xuất hiện về cuối trong “Ở quán cà phê của tuổi trẻ lạc lối” (Trần Bạch Lan dịch, Nhã Nam & NXB Văn Học) nhưng lại là mắt xích giải đáp cho mớ ngổn ngang còn lại. Một ngày bước qua quán cà phê La Condé thời xưa cũ rồi nhận ra quán đã đổi thành một cửa hiệu khác, Roland tái dựng ký ức về một cô gái mà anh đã gặp, đã yêu và đánh mất.',
@@ -172,6 +189,7 @@ const InfoData = [
     {
         id: 18,
         sold: 51,
+        rating: 3,
         theloai:"Tiểu thuyết",
         name:'Ông Già Và Biển Cả',
         intro1:'Ông già và Biển cả (tên tiếng Anh: The Old Man and the Sea) là một tiểu thuyết ngắn được Ernest Hemingway viết ở Cuba năm 1951 và xuất bản năm 1952. Nó là truyện ngắn dạng viễn tưởng cuối cùng được viết bởi Hemingway. Đây cũng là tác phẩm nổi tiếng và là một trong những đỉnh cao trong sự nghiệp sáng tác của nhà văn. Tác phẩm này đoạt giải Pulitzer cho tác phẩm hư cấu năm 1953. Nó cũng góp phần quan trọng để nhà văn được nhận Giải Nobel văn học năm 1954.',
@@ -182,6 +200,7 @@ const InfoData = [
     {
         id: 19,
         sold: 325,
+        rating: 4.5,
         theloai:"Cổ tích & thần thoại",
         name:'Truyền Thuyết Thành Troy Và Hy Lạp',
         intro1:'Trong tác phẩm này, tác giả Andrew Lang đã vận dụng những kiến thức thông thái của mình về lịch sử và văn học để viết lại câu chuyện về trận chiến huyền thoại giữa người Hy Lạp và thành Troy trong sử thi của Homer. Thêm vào đó, cuốn sách cũng đề cập đến những cuộc phiêu lưu của các anh hùng Theseus và Perseus, đồng thời kể về hành trình của Jason đi tìm bộ lông cừu vàng. Cuốn sách này chắc chắn sẽ làm thỏa mãn những bạn đọc yêu thích tìm hiểu những truyền thuyết kỳ thú và các tập tục văn hóa của người Hy Lạp khi xưa.',
@@ -192,6 +211,7 @@ const InfoData = [
     {
         id: 20,
         sold: 155,
+        rating: 4,
         theloai:"Cổ tích & thần thoại",
         name:'Truyền Thuyết Thành Troy Và Hy Lạp',
         intro1:'Trong tác phẩm này, tác giả Andrew Lang đã vận dụng những kiến thức thông thái của mình về lịch sử và văn học để viết lại câu chuyện về trận chiến huyền thoại giữa người Hy Lạp và thành Troy trong sử thi của Homer. Thêm vào đó, cuốn sách cũng đề cập đến những cuộc phiêu lưu của các anh hùng Theseus và Perseus, đồng thời kể về hành trình của Jason đi tìm bộ lông cừu vàng. Cuốn sách này chắc chắn sẽ làm thỏa mãn những bạn đọc yêu thích tìm hiểu những truyền thuyết kỳ thú và các tập tục văn hóa của người Hy Lạp khi xưa.',
