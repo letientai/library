@@ -22,11 +22,7 @@ const Card = (props) => {
         <p>Đã bán: {item.sold}</p>
         <div className="icon-start">
           <Rating name="half-rating-read" defaultValue={item.rating} precision={0.5} readOnly className="start"/>
-          {/* <Icon name="star" className="start" />
-          <Icon name="star" className="start" />
-          <Icon name="star" className="start" />
-          <Icon name="star" className="start" />
-          <Icon name="star" className="start" /> */}
+         
         </div>
       </div>
     </div>
