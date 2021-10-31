@@ -4,10 +4,16 @@ import Navbar from "../../components/navbar/navbar";
 import Card from "../../components/card/card";
 import InfoData from "../../assets/data/Infodata";
 import "./home.scss";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import Rating from "@mui/material/Rating";
+import Typography from "@mui/material/Typography";
 function Home() {
   const [data, setData] = useState([]);
   const [option, setOption] = useState(1);
   const [page, setPage] = useState(1);
+  const [checkColor, setCheckColor] = useState(false);
+  const [background, setBackground] = useState(1);
   const [label, setLabel] = useState("Tất cả");
 
   useEffect(() => {
@@ -77,51 +83,80 @@ function Home() {
     setOption(option);
     if (option === 1) {
       setPage(1);
-      setData(InfoData.sort((a, b) => parseFloat(a.id) - parseFloat(b.id)));
+      setData(
+        InfoData.sort((a, b) => parseFloat(a.id) - parseFloat(b.id)).slice(
+          0,
+          12
+        )
+      );
       setLabel("Tất cả");
     }
     if (option === 2) {
       setPage(1);
-      setData(InfoData.sort((a, b) => parseFloat(b.sold) - parseFloat(a.sold)));
+      setData(
+        InfoData.sort((a, b) => parseFloat(b.sold) - parseFloat(a.sold)).slice(
+          0,
+          12
+        )
+      );
       setLabel("Bán chạy");
     }
     if (option === 3) {
       setPage(1);
       setData(
-        InfoData.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
+        InfoData.sort(
+          (a, b) => parseFloat(a.price) - parseFloat(b.price)
+        ).slice(0, 12)
       );
       setLabel("Giá thấp");
     }
     if (option === 4) {
       setPage(1);
       setData(
-        InfoData.sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
+        InfoData.sort(
+          (a, b) => parseFloat(b.price) - parseFloat(a.price)
+        ).slice(0, 12)
       );
       setLabel("Giá cao");
     }
   };
 
   const changeData = async (e, { activePage }) => {
-    setPage(activePage)
+    setPage(activePage);
     if (activePage === 1) {
+      window.scrollTo({
+        top: 400,
+        behavior: "smooth",
+      });
       setData(InfoData.slice(0, 12));
-      window.scrollTo(0, 0);
     }
     if (activePage === 2) {
-      setData(InfoData.slice(13, 24));
-      window.scrollTo(0, 0);
+      window.scrollTo({
+        top: 400,
+        behavior: "smooth",
+      });
+      setData(InfoData.slice(12, 23));
     }
     if (activePage === 3) {
-      setData(InfoData.slice(25, 36));
-      window.scrollTo(0, 0);
+      window.scrollTo({
+        top: 400,
+        behavior: "smooth",
+      });
+      setData(InfoData.slice(23, 25));
     }
     // await setData1(data.slice(0, 10));
     // await console.log("data12: ", data1);
   };
-
+  const changeBackground = () => {
+    setCheckColor(!checkColor);
+    if (checkColor === true) {
+      setBackground(1);
+    } else {
+      setBackground(2);
+    }
+  };
   return (
-    
-    <div className="home-container">
+    <div className={background === 1 ? "home-container1" : "home-container2"}>
       <div className="home-top">
         <Navbar />
         <div className="content-Top">
@@ -173,7 +208,31 @@ function Home() {
       </div>
       <div className="main">
         <div className="main-content">
-          <div className="menu-right"></div>
+          <div className="menu-right">
+            <div className="label-background">
+              <FormControlLabel
+                control={<Switch defaultChecked={checkColor} />}
+                label="Chế độ ban đêm"
+                onClick={changeBackground}
+              />
+              <hr />
+            </div>
+            <div className="ratings">
+              <h4>Đánh giá</h4>
+              <div className="rating">
+                <Rating name="read-only" value={5} readOnly />
+                <Typography component="legend">Từ 5 sao</Typography>
+              </div>
+              <div className="rating">
+                <Rating name="read-only" value={4} readOnly />
+                <Typography component="legend">Từ 4 sao</Typography>
+              </div>
+              <div className="rating">
+                <Rating name="read-only" value={3} readOnly />
+                <Typography component="legend">Từ 3 sao</Typography>
+              </div>
+            </div>
+          </div>
           <div className="content">
             <div className="menu-content">
               <p
@@ -201,14 +260,14 @@ function Home() {
                 Giá cao
               </p>
             </div>
-            <Segment className="products">
+            <Segment className={background === 1 ? "products1" : "products2"}>
               <Label as="a" color="blue" ribbon>
                 <h4>{label}</h4>
               </Label>
               {/* <h1>{count}</h1> */}
               <div className="product">
                 {data.map((item) => (
-                  <Card product={item} key={item.id} />
+                  <Card product={item} key={item.id} bk={background} />
                 ))}
               </div>
               <div className="pagination">
@@ -219,7 +278,7 @@ function Home() {
                   firstItem={null}
                   lastItem={null}
                   siblingRange={1}
-                  totalPages={3}
+                  totalPages={5}
                   onPageChange={changeData}
                 />
               </div>

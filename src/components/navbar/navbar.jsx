@@ -1,70 +1,69 @@
 import React from "react";
 import "./navbar.scss";
 import logo from "../../assets/logo/logo.png";
-import { Icon, Input, Popup } from "semantic-ui-react";
-
+import { Icon, Input, Header } from "semantic-ui-react";
 const Navbar = () => {
   const open = () => {
-    let animation = document.getElementById("menu-close");
-    animation.style.transition = `ease 0.7s`;
+    let animation = document.getElementById("menu");
+    animation.style.transition = `ease 0.1s`;
     var id = setInterval(frame, 0.01);
-    var pos = 300;
+    var pos = 100;
     function frame() {
       if (pos === 0) {
         clearInterval(id);
       } else {
-        pos -= 30;
-        animation.style.transform = `translateX(${pos}px)`;
+        pos--;
+        animation.style.transform = `translateX(${pos}%)`;
       }
     }
   };
 
   const close = () => {
-    let animation = document.getElementById("menu-close");
-    animation.style.transition = `ease 0.7s`;
+    let animation = document.getElementById("menu");
+    animation.style.transition = `ease 0.1s`;
     var id = setInterval(frame, 0.01);
     var pos = 0;
     function frame() {
-      if (pos === 300) {
+      if (pos === 100) {
         clearInterval(id);
       } else {
-        pos += 30;
-        animation.style.transform = `translateX(${pos}px)`;
+        pos++;
+        animation.style.transform = `translateX(${pos}%)`;
       }
     }
   };
 
   return (
-    <div className="navbar-container">
+    <div className="navbar">
       <div className="logo">
-        <h1>LIBRARY</h1>
+        <p>Library</p>
         <img src={logo} alt="" />
       </div>
-      <div className="navbar-search">
+      <div className="search">
         <Input
           className="input-search"
           icon={<Icon name="search" inverted circular link />}
           placeholder="Search..."
         />
       </div>
-      <div className="navbar-infomation">
-        <div className="Icon">
-          <Popup
-            trigger={<Icon name="shopping cart" className="icon-cart" />}
-            content="Giỏ hàng của bạn"
-            position="bottom center"
-          />
-          <Popup
-            trigger={<Icon name="user" className="icon-cart" />}
-            content="Đăng nhập/Đăng ký"
-            position="bottom center"
-          />
-        </div>
-        <div className="menu">
-          <div className="menu-close" id="menu-close" onClick={close}></div>
-          <div className="menu-open" onClick={open}>
-            <Icon name="align justify" className="icon-menu" />
+      <div className="abv">
+      
+      </div>
+      <div className="menuRight">
+        <div className="menu" id="menu">
+          <div className="close">
+            <p>Best</p>
+            <div className="btn-close" onClick={close}>
+              <Icon name="x" className="close" />
+            </div>
           </div>
+          <Header as="h1" className="header">
+            PACKAGES
+          </Header>
+          
+        </div>
+        <div className="logoMenu" onClick={open}>
+          <Icon name="align justify" className="open" />
         </div>
       </div>
     </div>

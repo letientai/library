@@ -6,7 +6,7 @@ import Rating from '@mui/material/Rating';
 const Card = (props) => {
   const item = props.product;
   return (
-    <div className="card-container">
+    <div className={props.bk === 1 ? "card-container1" : "card-container2"}>
       <div className="image">
         <img src={item.image} alt="" />
       </div>
