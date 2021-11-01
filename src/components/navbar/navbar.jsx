@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState} from "react";
 import "./navbar.scss";
 import logo from "../../assets/logo/logo.png";
 import { Icon, Input, Header } from "semantic-ui-react";
 const Navbar = () => {
+  const [search, setSearch] = useState("");
   const open = () => {
     let animation = document.getElementById("menu");
     animation.style.transition = `ease 0.1s`;
@@ -32,7 +33,9 @@ const Navbar = () => {
       }
     }
   };
-
+  const onChangeSearch = (e) =>{
+    setSearch(e.target.value);
+  }
   return (
     <div className="navbar">
       <div className="logo">
@@ -41,14 +44,21 @@ const Navbar = () => {
       </div>
       <div className="search">
         <Input
+          value={search}
           className="input-search"
           icon={<Icon name="search" inverted circular link />}
           placeholder="Search..."
+          onChange={(e) => onChangeSearch(e)}
         />
       </div>
-      <div className="abv">
-      
-      </div>
+      {/* <div className="user">
+        <IconButton color="primary" aria-label="add to shopping cart">
+          <Icon name="shopping cart"/>
+        </IconButton>
+        <IconButton color="primary">
+          <Icon name="shopping cart"/>
+        </IconButton>
+      </div> */}
       <div className="menuRight">
         <div className="menu" id="menu">
           <div className="close">
@@ -60,7 +70,6 @@ const Navbar = () => {
           <Header as="h1" className="header">
             PACKAGES
           </Header>
-          
         </div>
         <div className="logoMenu" onClick={open}>
           <Icon name="align justify" className="open" />

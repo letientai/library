@@ -4,18 +4,18 @@ import Navbar from "../../components/navbar/navbar";
 import Card from "../../components/card/card";
 import InfoData from "../../assets/data/Infodata";
 import "./home.scss";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
+import { Checkbox } from "semantic-ui-react";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
 function Home() {
   const [data, setData] = useState([]);
-  const [option, setOption] = useState(1);
   const [page, setPage] = useState(1);
   const [checkColor, setCheckColor] = useState(false);
   const [background, setBackground] = useState(1);
   const [label, setLabel] = useState("Tất cả");
-
+  const [value, setValue] = useState("1");
   useEffect(() => {
     fetchData();
   }, []);
@@ -80,7 +80,7 @@ function Home() {
   };
 
   const onChangeOption = (option) => {
-    setOption(option);
+    // setOption(option);
     if (option === 1) {
       setPage(1);
       setData(
@@ -147,6 +147,7 @@ function Home() {
     // await setData1(data.slice(0, 10));
     // await console.log("data12: ", data1);
   };
+
   const changeBackground = () => {
     setCheckColor(!checkColor);
     if (checkColor === true) {
@@ -154,7 +155,13 @@ function Home() {
     } else {
       setBackground(2);
     }
+    // console.log("ahihi",Navbar.search);
   };
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <div className={background === 1 ? "home-container1" : "home-container2"}>
       <div className="home-top">
@@ -210,11 +217,14 @@ function Home() {
         <div className="main-content">
           <div className="menu-right">
             <div className="label-background">
-              <FormControlLabel
-                control={<Switch defaultChecked={checkColor} />}
-                label="Chế độ ban đêm"
-                onClick={changeBackground}
-              />
+              <div className="checkBox">
+                <Checkbox
+                  toggle
+                  defaultChecked={checkColor}
+                  onClick={changeBackground}
+                />
+                <p>Chế độ ban đêm</p>
+              </div>
               <hr />
             </div>
             <div className="ratings">
@@ -235,30 +245,38 @@ function Home() {
           </div>
           <div className="content">
             <div className="menu-content">
-              <p
-                className={option === 1 ? "optionChoose" : "option"}
-                onClick={() => onChangeOption(1)}
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                textColor="primary"
+                indicatorColor="primary"
+                aria-label="primary tabs example"
               >
-                Tất cả{" "}
-              </p>
-              <p
-                className={option === 2 ? "optionChoose" : "option"}
-                onClick={() => onChangeOption(2)}
-              >
-                Bán chay
-              </p>
-              <p
-                className={option === 3 ? "optionChoose" : "option"}
-                onClick={() => onChangeOption(3)}
-              >
-                Giá thấp
-              </p>
-              <p
-                className={option === 4 ? "optionChoose" : "option"}
-                onClick={() => onChangeOption(4)}
-              >
-                Giá cao
-              </p>
+                <Tab
+                  value="1"
+                  label="Tất cả"
+                  onClick={() => onChangeOption(1)}
+                  className={background === 1 ? "Tab1" : "Tab2"}
+                />
+                <Tab
+                  value="2"
+                  label="Bán chạy"
+                  onClick={() => onChangeOption(2)}
+                  className={background === 1 ? "Tab1" : "Tab2"}
+                />
+                <Tab
+                  value="3"
+                  label="Giá thấp"
+                  onClick={() => onChangeOption(3)}
+                  className={background === 1 ? "Tab1" : "Tab2"}
+                />
+                <Tab
+                  value="4"
+                  label="Giá cao"
+                  onClick={() => onChangeOption(4)}
+                  className={background === 1 ? "Tab1" : "Tab2"}
+                />
+              </Tabs>
             </div>
             <Segment className={background === 1 ? "products1" : "products2"}>
               <Label as="a" color="blue" ribbon>
