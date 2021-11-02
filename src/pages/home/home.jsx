@@ -24,7 +24,6 @@ function Home() {
   const [label, setLabel] = useState("Tất cả");
   const [value, setValue] = useState("1");
   const [loadingPage, setLoadingPage] = useState(true);
-
   setTimeout(function () {
     setLoadingPage(false);
   }, 2000);
@@ -181,6 +180,14 @@ function Home() {
       )
     );
   };
+  
+  const doSomethingWithTranscriptFromChild = async (data) => {
+    setData(
+      InfoData.filter((item) =>
+        item?.name?.toLocaleLowerCase()?.includes(data?.toLocaleLowerCase())
+      )
+    );
+  };
 
   return (
     <div>
@@ -189,7 +196,7 @@ function Home() {
       </Dimmer>
       <div className={background === 1 ? "home-container1" : "home-container2"}>
         <div className="home-top">
-          <Navbar passDataToParent={doSomethingWithDataFromChild} />
+          <Navbar passDataToParent={doSomethingWithDataFromChild} transcript={doSomethingWithTranscriptFromChild}/>
           <div className="content-Top">
             <div className="content">
               <div className="btn-category" onClick={open}>
@@ -247,7 +254,8 @@ function Home() {
                     defaultChecked={checkColor}
                     onClick={changeBackground}
                   />
-                  <p>Chế độ ban đêm</p>
+                  <p >Chế độ ban đêm</p>
+                  
                 </div>
                 <hr />
               </div>

@@ -1,9 +1,14 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./navbar.scss";
 import logo from "../../assets/logo/logo.png";
 import { Icon, Input, Header } from "semantic-ui-react";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
+
 const Navbar = (props) => {
   const [search, setSearch] = useState("");
+  const [checkMic, setChechMic] = useState(false);
 
   const open = () => {
     let animation = document.getElementById("menu");
@@ -35,14 +40,34 @@ const Navbar = (props) => {
     }
   };
 
-  const onChangeSearch = (e) =>{
+  const onChangeSearch = (e) => {
     setSearch(e.target.value);
-  }
+  };
 
-  const sendData =async () => {
+  const sendData = async () => {
     await props.passDataToParent(search);
     await setSearch("");
+  };
+  const {
+    transcript,
+    // listening,
+    // resetTranscript,
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition();
+
+  if (!browserSupportsSpeechRecognition) {
+    return <span>Browser doesn't support speech recognition.</span>;
   }
+  const CheckMic = async (check) => {
+    await setChechMic(check);
+    if (check === true) {
+        await SpeechRecognition.startListening();
+    } else {
+        await SpeechRecognition.stopListening();
+        await setSearch(transcript);
+        await props.transcript(transcript);
+    }
+  };
 
   return (
     <div className="navbar">
@@ -54,19 +79,20 @@ const Navbar = (props) => {
         <Input
           value={search}
           className="input-search"
-          icon={<Icon name="search" inverted circular link onClick={sendData}/>}
+          icon={
+            <Icon name="search" inverted circular link onClick={sendData} />
+          }
           placeholder="Search..."
           onChange={(e) => onChangeSearch(e)}
         />
+        <div className="void-search">
+          <Icon
+            name={checkMic === false ? "microphone" : "microphone slash"}
+            onClick={() => CheckMic(!checkMic)}
+            className="microphone"
+          />
+        </div>
       </div>
-      {/* <div className="user">
-        <IconButton color="primary" aria-label="add to shopping cart">
-          <Icon name="shopping cart"/>
-        </IconButton>
-        <IconButton color="primary">
-          <Icon name="shopping cart"/>
-        </IconButton>
-      </div> */}
       <div className="menuRight">
         <div className="menu" id="menu">
           <div className="close">
