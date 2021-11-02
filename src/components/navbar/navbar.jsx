@@ -2,8 +2,9 @@ import React, { useState} from "react";
 import "./navbar.scss";
 import logo from "../../assets/logo/logo.png";
 import { Icon, Input, Header } from "semantic-ui-react";
-const Navbar = () => {
+const Navbar = (props) => {
   const [search, setSearch] = useState("");
+
   const open = () => {
     let animation = document.getElementById("menu");
     animation.style.transition = `ease 0.1s`;
@@ -33,9 +34,16 @@ const Navbar = () => {
       }
     }
   };
+
   const onChangeSearch = (e) =>{
     setSearch(e.target.value);
   }
+
+  const sendData =async () => {
+    await props.passDataToParent(search);
+    await setSearch("");
+  }
+
   return (
     <div className="navbar">
       <div className="logo">
@@ -46,7 +54,7 @@ const Navbar = () => {
         <Input
           value={search}
           className="input-search"
-          icon={<Icon name="search" inverted circular link />}
+          icon={<Icon name="search" inverted circular link onClick={sendData}/>}
           placeholder="Search..."
           onChange={(e) => onChangeSearch(e)}
         />
