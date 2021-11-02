@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Icon, Segment, Label, Pagination } from "semantic-ui-react";
+import {
+  Icon,
+  Segment,
+  Label,
+  Pagination,
+  Dimmer,
+  Loader,
+} from "semantic-ui-react";
 import Navbar from "../../components/navbar/navbar";
 import Card from "../../components/card/card";
 import InfoData from "../../assets/data/Infodata";
@@ -16,6 +23,12 @@ function Home() {
   const [background, setBackground] = useState(1);
   const [label, setLabel] = useState("Tất cả");
   const [value, setValue] = useState("1");
+  const [loadingPage, setLoadingPage] = useState(true);
+
+  setTimeout(function () {
+    setLoadingPage(false);
+  }, 2000);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -60,6 +73,7 @@ function Home() {
       menu.style.display = "flex";
     }
   };
+
   const close = () => {
     let menu = document.getElementById("category");
     menu.style.transition = `ease 0.1s`;
@@ -144,8 +158,6 @@ function Home() {
       });
       setData(InfoData.slice(23, 25));
     }
-    // await setData1(data.slice(0, 10));
-    // await console.log("data12: ", data1);
   };
 
   const changeBackground = () => {
@@ -162,145 +174,159 @@ function Home() {
     setValue(newValue);
   };
 
+  const doSomethingWithDataFromChild = async (data) => {
+    setData(
+      InfoData.filter((item) =>
+        item?.name?.toLocaleLowerCase()?.includes(data?.toLocaleLowerCase())
+      )
+    );
+  };
+
   return (
-    <div className={background === 1 ? "home-container1" : "home-container2"}>
-      <div className="home-top">
-        <Navbar />
-        <div className="content-Top">
-          <div className="content">
-            <div className="btn-category" onClick={open}>
-              <p>Thể loại</p>
-              <Icon name="angle down" className="icon-angle-down" />
+    <div>
+      <Dimmer active={loadingPage} inverted className="dimmer">
+        <Loader inverted>Loading</Loader>
+      </Dimmer>
+      <div className={background === 1 ? "home-container1" : "home-container2"}>
+        <div className="home-top">
+          <Navbar passDataToParent={doSomethingWithDataFromChild} />
+          <div className="content-Top">
+            <div className="content">
+              <div className="btn-category" onClick={open}>
+                <p>Thể loại</p>
+                <Icon name="angle down" className="icon-angle-down" />
+              </div>
+              <Segment className="category" id="category">
+                <ul>
+                  <h3>Văn học nước ngoài</h3>
+                  <li>Cổ tích & thần thoại</li>
+                  <li>Tiểu thuyết</li>
+                  <li>Tiên hiệp</li>
+                  <li>Trinh thám</li>
+                  <li>Lịch sử</li>
+                  <li>Viễn tưởng</li>
+                  <li>Ngôn tình</li>
+                  <li>Đam mỹ</li>
+                  <li>Văn học</li>
+                </ul>
+                <ul>
+                  <h3>Văn học trong nước</h3>
+                  <li>Lịch sử</li>
+                  <li>Truyện dài</li>
+                  <li>Truyện ngắn</li>
+                  <li>Hồi ký</li>
+                  <li>Thơ ca</li>
+                  <li>Phóng sự, ký sự</li>
+                  <li>Truyện dân gian</li>
+                  <li>Tự truyện</li>
+                  <li>Văn học</li>
+                </ul>
+                <ul>
+                  <h3>Sách kinh tế</h3>
+                  <li>Maketing</li>
+                  <li>Ngoại thương</li>
+                  <li>Nhân sự & việc làm</li>
+                  <li>Tài chính</li>
+                  <li>Quản trị</li>
+                  <li>Văn bản luật</li>
+                  <li>Bài học kinh doanh</li>
+                  <li>Đầu tư chứng khoán</li>
+                </ul>
+                <Icon name="x" onClick={close} style={{ cursor: "pointer" }} />
+              </Segment>
             </div>
-            <Segment className="category" id="category">
-              <ul>
-                <h3>Văn học nước ngoài</h3>
-                <li>Cổ tích & thần thoại</li>
-                <li>Tiểu thuyết</li>
-                <li>Tiên hiệp</li>
-                <li>Trinh thám</li>
-                <li>Lịch sử</li>
-                <li>Viễn tưởng</li>
-                <li>Ngôn tình</li>
-                <li>Đam mỹ</li>
-                <li>Văn học</li>
-              </ul>
-              <ul>
-                <h3>Văn học trong nước</h3>
-                <li>Lịch sử</li>
-                <li>Truyện dài</li>
-                <li>Truyện ngắn</li>
-                <li>Hồi ký</li>
-                <li>Thơ ca</li>
-                <li>Phóng sự, ký sự</li>
-                <li>Truyện dân gian</li>
-                <li>Tự truyện</li>
-                <li>Văn học</li>
-              </ul>
-              <ul>
-                <h3>Sách kinh tế</h3>
-                <li>Maketing</li>
-                <li>Ngoại thương</li>
-                <li>Nhân sự & việc làm</li>
-                <li>Tài chính</li>
-                <li>Quản trị</li>
-                <li>Văn bản luật</li>
-                <li>Bài học kinh doanh</li>
-                <li>Đầu tư chứng khoán</li>
-              </ul>
-              <Icon name="x" onClick={close} style={{ cursor: "pointer" }} />
-            </Segment>
           </div>
         </div>
-      </div>
-      <div className="main">
-        <div className="main-content">
-          <div className="menu-right">
-            <div className="label-background">
-              <div className="checkBox">
-                <Checkbox
-                  toggle
-                  defaultChecked={checkColor}
-                  onClick={changeBackground}
-                />
-                <p>Chế độ ban đêm</p>
+        <div className="main">
+          <div className="main-content">
+            <div className="menu-right">
+              <div className="label-background">
+                <div className="checkBox">
+                  <Checkbox
+                    toggle
+                    defaultChecked={checkColor}
+                    onClick={changeBackground}
+                  />
+                  <p>Chế độ ban đêm</p>
+                </div>
+                <hr />
               </div>
-              <hr />
+              <div className="ratings">
+                <h4>Đánh giá</h4>
+                <div className="rating">
+                  <Rating name="read-only" value={5} readOnly />
+                  <Typography component="legend">Từ 5 sao</Typography>
+                </div>
+                <div className="rating">
+                  <Rating name="read-only" value={4} readOnly />
+                  <Typography component="legend">Từ 4 sao</Typography>
+                </div>
+                <div className="rating">
+                  <Rating name="read-only" value={3} readOnly />
+                  <Typography component="legend">Từ 3 sao</Typography>
+                </div>
+              </div>
             </div>
-            <div className="ratings">
-              <h4>Đánh giá</h4>
-              <div className="rating">
-                <Rating name="read-only" value={5} readOnly />
-                <Typography component="legend">Từ 5 sao</Typography>
+            <div className="content">
+              <div className="menu-content">
+                <Tabs
+                  value={value}
+                  onChange={handleChange}
+                  textColor="primary"
+                  indicatorColor="primary"
+                  aria-label="primary tabs example"
+                >
+                  <Tab
+                    value="1"
+                    label="Tất cả"
+                    onClick={() => onChangeOption(1)}
+                    className={background === 1 ? "Tab1" : "Tab2"}
+                  />
+                  <Tab
+                    value="2"
+                    label="Bán chạy"
+                    onClick={() => onChangeOption(2)}
+                    className={background === 1 ? "Tab1" : "Tab2"}
+                  />
+                  <Tab
+                    value="3"
+                    label="Giá thấp"
+                    onClick={() => onChangeOption(3)}
+                    className={background === 1 ? "Tab1" : "Tab2"}
+                  />
+                  <Tab
+                    value="4"
+                    label="Giá cao"
+                    onClick={() => onChangeOption(4)}
+                    className={background === 1 ? "Tab1" : "Tab2"}
+                  />
+                </Tabs>
               </div>
-              <div className="rating">
-                <Rating name="read-only" value={4} readOnly />
-                <Typography component="legend">Từ 4 sao</Typography>
-              </div>
-              <div className="rating">
-                <Rating name="read-only" value={3} readOnly />
-                <Typography component="legend">Từ 3 sao</Typography>
-              </div>
+              <Segment className={background === 1 ? "products1" : "products2"}>
+                <Label as="a" color="blue" ribbon>
+                  <h4>{label}</h4>
+                </Label>
+                {/* <h1>{count}</h1> */}
+                <div className="product">
+                  {data.length === 0 && <h2>Không tìm thấy sản phẩm nào!!!</h2>}
+                  {data.map((item) => (
+                    <Card product={item} key={item.id} bk={background} />
+                  ))}
+                </div>
+                <div className="pagination">
+                  <Pagination
+                    boundaryRange={0}
+                    activePage={page}
+                    ellipsisItem={null}
+                    firstItem={null}
+                    lastItem={null}
+                    siblingRange={1}
+                    totalPages={5}
+                    onPageChange={changeData}
+                  />
+                </div>
+              </Segment>
             </div>
-          </div>
-          <div className="content">
-            <div className="menu-content">
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                textColor="primary"
-                indicatorColor="primary"
-                aria-label="primary tabs example"
-              >
-                <Tab
-                  value="1"
-                  label="Tất cả"
-                  onClick={() => onChangeOption(1)}
-                  className={background === 1 ? "Tab1" : "Tab2"}
-                />
-                <Tab
-                  value="2"
-                  label="Bán chạy"
-                  onClick={() => onChangeOption(2)}
-                  className={background === 1 ? "Tab1" : "Tab2"}
-                />
-                <Tab
-                  value="3"
-                  label="Giá thấp"
-                  onClick={() => onChangeOption(3)}
-                  className={background === 1 ? "Tab1" : "Tab2"}
-                />
-                <Tab
-                  value="4"
-                  label="Giá cao"
-                  onClick={() => onChangeOption(4)}
-                  className={background === 1 ? "Tab1" : "Tab2"}
-                />
-              </Tabs>
-            </div>
-            <Segment className={background === 1 ? "products1" : "products2"}>
-              <Label as="a" color="blue" ribbon>
-                <h4>{label}</h4>
-              </Label>
-              {/* <h1>{count}</h1> */}
-              <div className="product">
-                {data.map((item) => (
-                  <Card product={item} key={item.id} bk={background} />
-                ))}
-              </div>
-              <div className="pagination">
-                <Pagination
-                  boundaryRange={0}
-                  activePage={page}
-                  ellipsisItem={null}
-                  firstItem={null}
-                  lastItem={null}
-                  siblingRange={1}
-                  totalPages={5}
-                  onPageChange={changeData}
-                />
-              </div>
-            </Segment>
           </div>
         </div>
       </div>
