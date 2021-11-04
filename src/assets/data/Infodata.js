@@ -140,7 +140,7 @@ const InfoData = [
         intro1:'Một câu chuyện bỗng nhiên hiện ra từ quá khứ mịn màng. Lúc nào người ta cũng tự hỏi, làm cách nào, bằng thứ giả thuật kim nào, mà tác giả có thể tạo ra những ký ức tinh xảo đến thế.',
         intro2:'Nhưng Jaquenline, Van Bever rồi Peter Rachman, Paris và London của giai đoạn hậu chiến trong “Từ thăm thẳm lãng quên” dần dà làm cho chúng ta hiểu rằng vỏ bọc quá khứ mịn màng hoàn toàn có thể chứa đựng những kỷ niệm đâu đớn đến thế nào, những kỷ niệm ngủ yên nhưng sẽ quay trở lại quấy nhiễu chúng ta sau từng quãng thời gian mười lăm năm.',
         image:'https://vnwriter.net/wp-content/uploads/2016/10/sach-tu-tham-tham-lang-quen-189x300.gif',
-        price: 145000
+        price: 223500
     },
     {
         id: 14,
@@ -210,15 +210,107 @@ const InfoData = [
     },
     {
         id: 20,
-        sold: 155,
-        rating: 4,
-        theloai:"Cổ tích & thần thoại",
-        name:'Truyền Thuyết Thành Troy Và Hy Lạp',
-        intro1:'Trong tác phẩm này, tác giả Andrew Lang đã vận dụng những kiến thức thông thái của mình về lịch sử và văn học để viết lại câu chuyện về trận chiến huyền thoại giữa người Hy Lạp và thành Troy trong sử thi của Homer. Thêm vào đó, cuốn sách cũng đề cập đến những cuộc phiêu lưu của các anh hùng Theseus và Perseus, đồng thời kể về hành trình của Jason đi tìm bộ lông cừu vàng. Cuốn sách này chắc chắn sẽ làm thỏa mãn những bạn đọc yêu thích tìm hiểu những truyền thuyết kỳ thú và các tập tục văn hóa của người Hy Lạp khi xưa.',
-        intro2:'',
-        image:'https://readvii.com/wp-content/uploads/2020/04/sach-truyen-thuyet-thanh-troy-va-hy-lap-210x300.png',
-        price: 100000
+        sold: 490,
+        rating: 4.5,
+        theloai:"Tiên hiệp",
+        name:'Tru Tiên (Tái Bản)',
+        intro1:'Tiêu Đỉnh tên thật là Trương Tiển, sinh năm 1976 tại Phúc Châu. Anh chọn bút danh Tiêu Đỉnh vì thấy rằng trong truyện kiếm hiệp, những người họ Tiêu thường có võ công cao cường, còn Đỉnh là một trọng khí của Trung Quốc cổ đại. Tiêu Đỉnh chập chững sáng tác vào năm 2001, được khuyến khích bởi hai yếu tố là thừa thời gian (do đang thất nghiệp) và trào lưu văn học mạng (do phong trào sáng tác trên mạng Trung Quốc lúc đó bắt đầu nở rộ).',
+        intro2:'Năm 2001, Tiêu Đỉnh dấn thân vào thể loại huyền ảo khi tình cờ tham gia một tạp chí online tên là Người mơ mộng. Một ngày đẹp trời, vài nhân vật cốt cán trong tạp chí rủ nhau viết chung một tác phẩm kiếm hiệp pha huyền ảo, cũng chính nhóm này là tác giả cho những ý tưởng đầu tiên của Tru Tiên. Được một thời gian thì nhóm đã giải tán, chỉ còn mình Tiêu Đỉnh vẫn kiên trì hứng thú. Tiếc rằng lúc đó bút lực chưa đủ, ý tưởng cũng chưa rõ rệt, nên anh gác bản phác thảo dở dang ấy sang một bên, tập viết vài truyện ngắn khác.',
+        image:'https://salt.tikicdn.com/cache/400x400/media/catalog/product/t/r/tru-tien.jpg.webp',
+        price: 623800
     },
+    {
+        id: 21,
+        sold: 370,
+        rating: 4,
+        theloai:"Tiên hiệp",
+        name:'Loạn Thế Vi Vương (Toàn Tập)',
+        intro1:'Một cuốn sách rung động tận tâm can về giai đoạn lịch sử hưng vong của Trung Nguyên, một khúc chiến ca thời loạn trải qua mười năm đằng đẵng. Thiên hạ ngập khói lửa, non sông bị tàn phá, vương đạo ở ngay trong lòng mỗi người.',
+        intro2:'Vốn là một cậu ấm mười sáu tuổi ăn sung mặc sướng, trước gia cảnh đột ngột thay đổi, Du Diểu chỉ còn một sơn trang hoang vu do người mẹ quá cố để lại và người nô bộc Khuyển Nhung rất mực trung thành - Lý Trị Phong. Hai người đã cùng nhau san sẻ những tháng ngày đầy thử thách, từ lập nghiệp với hai bàn tay trắng, đến góp sức vực dậy nửa mảnh giang sơn bị giày xéo dưới gót sắt quân thù…',
+        image:'https://salt.tikicdn.com/cache/400x400/ts/product/b1/22/42/6239c1762e34958e87c5a69fc52cfc93.jpg.webp',
+        price: 309600
+    },
+
+    {
+        id: 22,
+        sold: 450,
+        rating: 5,
+        theloai:"Tiên hiệp",
+        name:'Thế giới tu Chân (Phương Tưởng)',
+        intro1:'Tả Mạc không có thiên phú tu kiếm nhưng có thiên phú về ngũ hành… ngoại môn đệ tử chỉ có mỗi mình hắn luyện được Vân Vũ quyết (tạo mưa) đến tầng 3… mất trí nhớ nên hắn không có ý chí phấn đấu… mơ ước của lớn nhất của hắn là thành 1 vị Linh thực phu (đại loại như kiểu kỹ sư nông nghiệp ấy)…',
+        intro2:'Nhưng trong 1 lần đi trừ sâu cho ruộng linh cốc … Tả Mạc bị 1 hạt Bồ Công Anh yêu quái (Bồ yêu) chiếm lấy thức hải… từ đấy Tả Mạc đổi đời… trở thành Linh thực phu rồi thành nội môn đệ tử… . Thiên phú của hắn ko ở tu kiếm nhưng tính cách hắn cố chấp, kiên định … lại được bồ yêu hướng dẫn nên tu luyện được kiếm ý .',
+        image:'https://123truyen.com/images/2019/12/the-gioi-tu-chan.jpeg',
+        price: 260500
+    },
+
+    {
+        id: 23,
+        sold: 516,
+        rating: 5,
+        theloai:"Tiên hiệp",
+        name:'Tinh thần biến',
+        intro1:'Lại một tác phẩm nữa của tác giả Ngã Cật Tây Hồng Thị. Tinh Thần Biến là một tiểu thuyết tiên hiệp hoành tráng kể về người thanh niên Tần Vũ gian khổ tu luyện, vượt hết khó khăn này đến nguy hiểm khác để lên Thần Giới tìm người yêu.',
+        intro2:'Tần Vũ đã gặp duyên kỳ ngộ học được Tinh Thần Biến công pháp của Lôi Vệ, gian khổ tu luyện để làm cho người thân mình an toàn, nhờ sự giúp sức của Lan thúc (chú của người yêu) và Nghịch Ương tiên đế để phi thăng lên tiên giới và thần giới, nhưng rồi tại thần giới tranh đấu với cả nhà thần vương của Lôi Phạt thành và Lôi Phạt thiên tôn, cuối cùng nhờ sự giúp sức của Lôi Mông (sau này là nhị sư huynh của Tần Vũ và cũng là Lâm Lôi trong truyện Bàn Long cùng tác giả) phát triển lên sau này đã sáng tạo ra Tần Mông vũ trụ của riêng mình.',
+        image:'https://hoathinh3d.com/wp-content/uploads/2021/03/tinh-than-bien-phan-1-450-300x450.jpg',
+        price: 350400
+    },
+    {
+        id: 24,
+        sold: 350,
+        rating: 4.5,
+        theloai:"Tiên hiệp",
+        name:'Bách Luyện Thành Thần (Huyền Vũ)',
+        intro1:'Một truyện có mô típ gần giống Phàm Nhân Tu Tiên, nói về con đường tu luyện của một phàm nhân bước trên con đường tiên đạo đầy gập ghềnh. Lâm Hiên trong tác phẩm là một người như vậy, không sở hữu linh căn cũng đồng nghĩa với việc vô duyên với tiên đạo nhưng Lâm Hiên là một người có tính cách quật cường, cố chấp!',
+        intro2:'– Không được thì sao? ta cứ tu đấy! Thế nào, có vấn đề gì sao? Nghịch Thiên ư? Vốn dĩ nó đã thế rồi! Có Lam Sắc Tinh Hải ta sẽ chống được hết! Người có tông môn chống đỡ, có Thiên tài địa bảo, Linh dược để ngươi ăn! Không bằng ta Thượng Phẩm Tẩy tủy đan ta có cả nắm, Cực Phẩm Trúc Cơ đan ta cho ngươi cả đống ăn cũng không hết, nói đến đan dược không ai nhiều bằng ta, nói đến Luyện Khí ta là Đại sư rồi.',
+        image:'http://b-f25-zpg.zdn.vn/1543649841124085394/27aec7416a399267cb28.jpg',
+        price: 254000
+    },
+    {
+        id: 25,
+        sold: 306,
+        rating: 4,
+        theloai:"Tiên hiệp",
+        name:' Ấn Công Đức',
+        intro1:'Khương Chỉ Khanh bị Ma giáo bắt, được cháu gái của giáo chủ Ma giáo - Tô Lâm An cứu giúp, sau khi thoát khỏi Ma giáo, tu vi Khương Chỉ Khanh đột nhiên tăng mạnh và giành được cơ hội phi thăng.Mà Ma giáo bị nhân sĩ chính phái hợp lực tiêu diệt, chỉ còn lại Tô Lâm An may mắn sống sót.',
+        intro2:'Khương Chỉ Khanh cầm tiên lệnh trở về hạ giới, truy sát Tô Lâm An. Sau khi chết, Tô Lâm An bị oán khí trên người khóa nguyên thần lại, không thể siêu thoát, phải làm việc thiện để thắp sáng ấn Công Đức, góp đủ công đức mới có thể đổi thân thể mới. Một nghìn năm sau, Tô Lâm An tỉnh lại trong một thanh kiếm gỉ, nàng gặp Mục Cẩm Vân - nguyên thần của Khương Chỉ Khanh chuyển thế. Mục Cẩm Vân cùng môn phái với Khương Chỉ Khanh nhưng vì trước đây Khương Chỉ Khanh lấy trộm thần khí ấn Công Đức cho Tô Lâm An nên đắc tội các tiên môn ở thượng giới và có kết cục thảm bại.',
+        image:'https://307a0e78.vws.vegacdn.vn/view/v2/image/img.media/an-cong-duc-1.jpg',
+        price: 170000
+    },
+    {
+        id: 26,
+        sold: 160,
+        rating: 4,
+        theloai:"Tiên hiệp",
+        name:' Ấn Công Đức',
+        intro1:'Nam chính Trương Huyền xuyên không trở thành lão sư, chuyên hướng dẫn học trò tu luyện đắc đạo. Sau khi xuyên không, trong đầu hắn có bí kíp thần bí bởi vậy, hắn có thể đào tạo ra những học trò mạnh nhất, hắn cũng trở nên trâu bò nhất thiên hạ....Nói đến những truyện tiên hiệp mới ra mắt 2018 thì mình ưng nhất truyện này. Mới chương đầu mà chết cười với main lầy lội, đọc cười lăn lê bò lết luôn. Mình cũng dạo qua các diễn đàn bình chọn thì gần như không có 1 lời chê nào. Có thánh còn cmt "Truyện quá hay! bạn nào đọc thử nên đọc . 10 năm tu luyện mãi mới kiếm đc bộ hay" thì phải biết được độ hay đến mức nào rồi đó. ',
+        intro2:'',
+        image:'https://307a0e78.vws.vegacdn.vn/view/v2/image/img.media/thu-vien-thien-dao.jpg',
+        price: 120000
+    },
+    {
+        id: 27,
+        sold: 530,
+        rating: 5,
+        theloai:"Tiên hiệp",
+        name:'Đấu Phá Thương Khung',
+        intro1:'- Đấu Phá Thương Khung là một câu chuyện huyền huyễn đặc sắc kể về Tiêu Viêm, một thiên chi kiêu tử với thiên phú tu luyện mà ai ai cũng hâm mộ, bỗng một ngày người mẹ mất đi đễ lại di vật là một chiếc giới chỉ màu đen nhưng từ khi đó Tiêu Viêm đã mất đi thiên phú tu luyện của mình.',
+        intro2:'- Từ thiên tài rớt xuống làm phế vật trong 3 năm, rồi bị vị hôn thê thẳng thừng từ hôn, làm dấy lên ý chí nam nhi của mình, Tiêu Viêm nhờ di vật của mẫu thân để lại là 1 chiếc hắc giới chỉ (nhẫn màu đen)Tiêu Viêm gặp được hồn của Dược Lão (Dược Trần – Dược tôn giả) 1 đại luyện dược tông sư của đấu khí đại lục…',
+        image:'https://animevi.net/image/poster/2131626596115.jpg',
+        price: 265000
+    },
+    {
+        id: 28,
+        sold: 480,
+        rating: 5,
+        theloai:"Tiên hiệp",
+        name:'Đấu La Đại Lục',
+        intro1:'Đấu La Đại Lục là một trong những tác phẩm đặc sắc của Đường Gia Tam Thiếu. Tác phẩm thuộc thể loại Huyễn Hiệp, mang đến cho độc giả một cái nhìn, một cảm nhận mới về thế giới hiệp khách huyền ảo. Câu chuyện với nhân vật chính, con một thợ rèn, một thợ rèn trở thành tửu quỷ, vì thê tử đã mất, sẵn sàng lôi cuốn người đọc ngay từ những chương đầu tiên.',
+        intro2:'Đấu La Thế Giới, một đại lục rộng lớn, cư dân đông đúc. Chức nghiệp cao quý nhất tại đây được gọi là Hồn Sư. Mỗi người sinh ra, đều có một vũ hồn bẩm sinh. Vũ hồn có thể là cái cày, cái cuốc, liêm đao… thuộc khối công cụ, một đóa hoa cúc, một cành mai… thuộc thực vật hệ, đến các vũ hồn cường đại như Tuyết Ảnh Ma Hùng, Tật Phong Ma Lang….',
+        image:'https://i0.wp.com/gioitienhiep.com/wp-content/uploads/2019/09/7-1.jpg?w=840&ssl=1',
+        price: 255000
+    },
+
+
 
 
 ]

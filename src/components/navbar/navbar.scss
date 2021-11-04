@@ -24,26 +24,30 @@
   }
   .search {
     width: 55%;
-    text-align: center;
+    // text-align: left;
     padding: 10px;
-    display: flex;
-    .input-search {
-      width: 85% !important;
+    .center {
+      display: flex;
       margin: auto;
-      max-width: 700px;
-    }
-    .void-search {
-      padding: 10px;
-
-      width: 15%;
-      // background-color: aqua;
-      text-align: left;
-      .microphone {
-        font-size: 20px;
-        color: white;
+      width: 100%;
+      max-width: 760px;
+      .input-search {
+        width: 91% !important;
+        margin: auto;
+        max-width: 700px;
+      }
+      .void-search {
+        padding-top: 7px;
+        border: 1px solid white;
+        width: 50px;
         cursor: pointer;
-        &:hover {
-          color: rgb(228, 224, 224);
+        text-align: center;
+        .microphone {
+          font-size: 20px;
+          color: white;
+        }
+        &:hover > .microphone{
+          color: rgb(207, 207, 204);
         }
       }
     }

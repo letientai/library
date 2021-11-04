@@ -1,9 +1,10 @@
-import Home from './pages/home/home';
+// import Home from './pages/home/home';
+import Router from './router/router';
 
 function App() {
   return (
     <div className="App">
-      <Home/>
+      <Router/>
     </div>
   );
 }
