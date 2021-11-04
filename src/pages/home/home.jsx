@@ -16,6 +16,8 @@ import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
+
+
 function Home() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
@@ -24,6 +26,8 @@ function Home() {
   const [label, setLabel] = useState("Tất cả");
   const [value, setValue] = useState("1");
   const [loadingPage, setLoadingPage] = useState(true);
+  const checkHome = useState("home");
+
   setTimeout(function () {
     setLoadingPage(false);
   }, 2000);
@@ -148,14 +152,14 @@ function Home() {
         top: 400,
         behavior: "smooth",
       });
-      setData(InfoData.slice(12, 23));
+      setData(InfoData.slice(12, 24));
     }
     if (activePage === 3) {
       window.scrollTo({
         top: 400,
         behavior: "smooth",
       });
-      setData(InfoData.slice(23, 25));
+      setData(InfoData.slice(24, 36));
     }
   };
 
@@ -166,7 +170,6 @@ function Home() {
     } else {
       setBackground(2);
     }
-    // console.log("ahihi",Navbar.search);
   };
 
   const handleChange = (event, newValue) => {
@@ -180,13 +183,33 @@ function Home() {
       )
     );
   };
-  
+
   const doSomethingWithTranscriptFromChild = async (data) => {
-    setData(
-      InfoData.filter((item) =>
-        item?.name?.toLocaleLowerCase()?.includes(data?.toLocaleLowerCase())
-      )
-    );
+    if (data === "tất cả") {
+      onChangeOption(1);
+      setValue("1");
+    } else if (data === "bán chạy") {
+      onChangeOption(2);
+      setValue("2");
+    } else if (data === "giá thấp") {
+      onChangeOption(3);
+      setValue("3");
+    } else if (data === "giá cao") {
+      onChangeOption(4);
+      setValue("4");
+    } else if (data === "chế độ ban đêm" || data === "ban đêm") {
+      alert("Bạn đã đổi sang chế độ ban đêm")
+      setBackground(2);
+    } else if (data === "chế độ ban ngày" || data === "ban ngày" || data === "morning") {
+      alert("Bạn đã đổi sang chế độ ban ngày")
+      setBackground(1);
+    } else {
+      setData(
+        InfoData.filter((item) =>
+          item?.name?.toLocaleLowerCase()?.includes(data?.toLocaleLowerCase())
+        )
+      );
+    }
   };
 
   return (
@@ -196,7 +219,11 @@ function Home() {
       </Dimmer>
       <div className={background === 1 ? "home-container1" : "home-container2"}>
         <div className="home-top">
-          <Navbar passDataToParent={doSomethingWithDataFromChild} transcript={doSomethingWithTranscriptFromChild}/>
+          <Navbar
+            passDataToParent={doSomethingWithDataFromChild}
+            transcript={doSomethingWithTranscriptFromChild}
+            checkpage={checkHome}
+          />
           <div className="content-Top">
             <div className="content">
               <div className="btn-category" onClick={open}>
@@ -254,8 +281,7 @@ function Home() {
                     defaultChecked={checkColor}
                     onClick={changeBackground}
                   />
-                  <p >Chế độ ban đêm</p>
-                  
+                  <p>Chế độ ban đêm</p>
                 </div>
                 <hr />
               </div>

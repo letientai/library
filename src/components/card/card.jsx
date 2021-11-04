@@ -2,11 +2,19 @@ import React from "react";
 import { Icon } from "semantic-ui-react";
 import "./card.scss";
 import Rating from '@mui/material/Rating';
-
+import { useHistory } from "react-router-dom";
 const Card = (props) => {
+
   const item = props.product;
+  const history = useHistory();
+
+  const moveToDetail = () =>{
+    history.push(`/product/${item.id}`)
+    // console.log("item", item.id);
+  }
+
   return (
-    <div className={props.bk === 1 ? "card-container1" : "card-container2"}>
+    <div className={props.bk === 1 ? "card-container1" : "card-container2"} onClick={moveToDetail}>
       <div className="image">
         <img src={item.image} alt="" />
       </div>

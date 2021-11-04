@@ -5,10 +5,16 @@ import { Icon, Input, Header } from "semantic-ui-react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
+import { useHistory } from "react-router-dom";
+import { render } from "@testing-library/react";
 
 const Navbar = (props) => {
   const [search, setSearch] = useState("");
   const [checkMic, setChechMic] = useState(false);
+  const history = useHistory();
+  const checkPage = props.checkpage;
+  // const id = location.pathname?.split("/")[1];
+  // const location = useLocation();
 
   const open = () => {
     let animation = document.getElementById("menu");
@@ -45,9 +51,15 @@ const Navbar = (props) => {
   };
 
   const sendData = async () => {
-    await props.passDataToParent(search);
+    await history.push(`/`);
+    if (checkPage[0] === "home") {
+      await props.passDataToParent(search);
+    }else{
+      await props.passDataToParent(search);
+    }
     await setSearch("");
   };
+
   const {
     transcript,
     // listening,
@@ -58,14 +70,17 @@ const Navbar = (props) => {
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
+
   const CheckMic = async (check) => {
     await setChechMic(check);
     if (check === true) {
-        await SpeechRecognition.startListening();
+      await SpeechRecognition.startListening();
     } else {
-        await SpeechRecognition.stopListening();
+      await SpeechRecognition.stopListening();
+      if (checkPage[0] === "home") {
         await setSearch(transcript);
         await props.transcript(transcript);
+      }
     }
   };
 
@@ -76,21 +91,22 @@ const Navbar = (props) => {
         <img src={logo} alt="" />
       </div>
       <div className="search">
-        <Input
-          value={search}
-          className="input-search"
-          icon={
-            <Icon name="search" inverted circular link onClick={sendData} />
-          }
-          placeholder="Search..."
-          onChange={(e) => onChangeSearch(e)}
-        />
-        <div className="void-search">
-          <Icon
-            name={checkMic === false ? "microphone" : "microphone slash"}
-            onClick={() => CheckMic(!checkMic)}
-            className="microphone"
+        <div className="center">
+          <Input
+            value={search}
+            className="input-search"
+            icon={
+              <Icon name="search" inverted circular link onClick={sendData} />
+            }
+            placeholder="Search..."
+            onChange={(e) => onChangeSearch(e)}
           />
+          <div className="void-search" onClick={() => CheckMic(!checkMic)}>
+            <Icon
+              name={checkMic === false ? "microphone" : "microphone slash"}
+              className="microphone"
+            />
+          </div>
         </div>
       </div>
       <div className="menuRight">
