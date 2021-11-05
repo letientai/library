@@ -6,7 +6,6 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import { useHistory } from "react-router-dom";
-import { render } from "@testing-library/react";
 
 const Navbar = (props) => {
   const [search, setSearch] = useState("");
@@ -84,11 +83,15 @@ const Navbar = (props) => {
     }
   };
 
+  const moveToHome = () =>{
+    history.push('/')
+  }
+
   return (
     <div className="navbar">
       <div className="logo">
-        <p>Library</p>
-        <img src={logo} alt="" />
+        <p onClick={moveToHome}>Library</p>
+        <img src={logo} alt="" onClick={moveToHome}/>
       </div>
       <div className="search">
         <div className="center">
