@@ -217,7 +217,7 @@ const InfoData = [
         intro1:'Tiêu Đỉnh tên thật là Trương Tiển, sinh năm 1976 tại Phúc Châu. Anh chọn bút danh Tiêu Đỉnh vì thấy rằng trong truyện kiếm hiệp, những người họ Tiêu thường có võ công cao cường, còn Đỉnh là một trọng khí của Trung Quốc cổ đại. Tiêu Đỉnh chập chững sáng tác vào năm 2001, được khuyến khích bởi hai yếu tố là thừa thời gian (do đang thất nghiệp) và trào lưu văn học mạng (do phong trào sáng tác trên mạng Trung Quốc lúc đó bắt đầu nở rộ).',
         intro2:'Năm 2001, Tiêu Đỉnh dấn thân vào thể loại huyền ảo khi tình cờ tham gia một tạp chí online tên là Người mơ mộng. Một ngày đẹp trời, vài nhân vật cốt cán trong tạp chí rủ nhau viết chung một tác phẩm kiếm hiệp pha huyền ảo, cũng chính nhóm này là tác giả cho những ý tưởng đầu tiên của Tru Tiên. Được một thời gian thì nhóm đã giải tán, chỉ còn mình Tiêu Đỉnh vẫn kiên trì hứng thú. Tiếc rằng lúc đó bút lực chưa đủ, ý tưởng cũng chưa rõ rệt, nên anh gác bản phác thảo dở dang ấy sang một bên, tập viết vài truyện ngắn khác.',
         image:'https://salt.tikicdn.com/cache/400x400/media/catalog/product/t/r/tru-tien.jpg.webp',
-        price: 623800
+        price: 423800
     },
     {
         id: 21,
