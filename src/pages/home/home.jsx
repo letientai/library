@@ -17,7 +17,6 @@ import Typography from "@mui/material/Typography";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 
-
 function Home() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
@@ -37,7 +36,9 @@ function Home() {
   }, []);
 
   const fetchData = () => {
-    setData(InfoData.slice(0, 12));
+    setData(
+      InfoData.sort((a, b) => parseFloat(a.id) - parseFloat(b.id)).slice(0, 12)
+    );
   };
 
   const open = () => {
@@ -198,10 +199,14 @@ function Home() {
       onChangeOption(4);
       setValue("4");
     } else if (data === "chế độ ban đêm" || data === "ban đêm") {
-      alert("Bạn đã đổi sang chế độ ban đêm")
+      alert("Bạn đã đổi sang chế độ ban đêm");
       setBackground(2);
-    } else if (data === "chế độ ban ngày" || data === "ban ngày" || data === "morning") {
-      alert("Bạn đã đổi sang chế độ ban ngày")
+    } else if (
+      data === "chế độ ban ngày" ||
+      data === "ban ngày" ||
+      data === "morning"
+    ) {
+      alert("Bạn đã đổi sang chế độ ban ngày");
       setBackground(1);
     } else {
       setData(
