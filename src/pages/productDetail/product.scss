@@ -15,9 +15,8 @@
     width: 90%;
     margin: auto;
     max-width: 1450px;
-    height: 500px;
-    background-color: white;
     .main-content {
+      background-color: white;
       display: flex;
       // margin-top: 30px;
       .image {
@@ -111,6 +110,46 @@
             }
           }
         }
+      }
+      .buy {
+        // background-color: aqua;
+        border-top: 1px solid rgb(230, 226, 226);
+        margin-top: 15px;
+        padding: 15px 0;
+        .minus {
+          margin: 0;
+          font-size: 12px;
+        }
+        .plus {
+          margin: 0;
+          font-size: 12px;
+        }
+        .input-quantity {
+          width: 40px;
+          margin: 0 5px;
+          font-size: 12px;
+          input[type="number"]::-webkit-inner-spin-button,
+          input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0;
+          }
+        }
+      }
+      .btn-buy {
+        width: 200px;
+        height: 50px;
+        margin-top: 20px;
+      }
+    }
+    .similar-product {
+      background-color: white;
+      margin: 70px 0;
+      padding: 0;
+      p{
+        padding: 25px;
+        font-size: 20px;
       }
     }
   }
