@@ -4,24 +4,34 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import InfoData from "../../assets/data/Infodata";
 import Rating from "@mui/material/Rating";
+import { Button, Input } from "semantic-ui-react";
+import Buttonn from "@mui/material/Button";
+import CardItem from "../../components/cardItem/cardItem";
 
 function Product() {
   const location = useLocation();
   const ID = location.pathname?.split("product/")[1];
   const [data, setData] = useState([]);
+  const [dataItem, setDataItem] = useState([]);
   const checkProduct = useState("product");
-
+  const [quantity, setQuantity] = useState(1);
   useEffect(() => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {
+  const fetchData = () => {
     for (var i = 0; i < 28; i++) {
       if (parseInt(InfoData[i].id) === parseInt(ID)) {
         setData(InfoData[i]);
+        setDataItem(
+          InfoData.filter((item) =>
+            item?.theloai
+              ?.toLocaleLowerCase()
+              ?.includes(InfoData[i].theloai?.toLocaleLowerCase())
+          )
+        );
       }
     }
-    console.log("data", data);
     window.scrollTo({
       top: 100,
       behavior: "smooth",
@@ -35,6 +45,20 @@ function Product() {
     //   )
     // );
     console.log("data", data);
+  };
+
+  const onChangeInput = (e) => {
+    setQuantity(e.target.value);
+  };
+
+  const onchangeQuantity = (name) => {
+    if (name === "plus") {
+      setQuantity(parseInt(quantity) + 1);
+    } else if (quantity === 1) {
+      setQuantity(1);
+    } else {
+      setQuantity(parseInt(quantity) - 1);
+    }
   };
 
   return (
@@ -90,10 +114,40 @@ function Product() {
                       <i>Miến phí vận chuyển</i>
                     </div>
                   </div>
+                  <div className="buy">
+                    <div className="quantity">
+                      <Button
+                        icon="minus"
+                        className="minus"
+                        onClick={() => onchangeQuantity("minus")}
+                      />
+                      <Input
+                        className="input-quantity"
+                        type="number"
+                        value={quantity}
+                        onChange={onChangeInput}
+                      />
+                      <Button
+                        icon="plus"
+                        className="plus"
+                        onClick={() => onchangeQuantity("plus")}
+                      />
+                    </div>
+                    <Buttonn variant="contained" className="btn-buy">
+                      Mua ngay
+                    </Buttonn>
+                  </div>
                 </div>
                 <div className="col2"></div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="similar-product">
+          <p>Sản phẩm tương tự</p>
+          <hr />
+          <div className="product">
+            
           </div>
         </div>
       </div>
