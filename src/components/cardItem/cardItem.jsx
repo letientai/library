@@ -17,6 +17,7 @@ const CardItem = (props) => {
         <img src={item.image} alt="" />
       </div>
       <h5>{item.name}</h5>
+      
       <Rating
         name="half-rating-read"
         defaultValue={item.rating}
