@@ -23,9 +23,35 @@
         padding-top: 50px;
         width: 40%;
         text-align: center;
+        display: block;
         img {
           width: 65%;
           height: 430px;
+        }
+        .link {
+          margin: 20px;
+          width: 100%;
+          text-align: left;
+          display: flex;
+          p {
+            font-size: 15px;
+            margin-right: 10px;
+          }
+          .icon {
+            font-size: 20px;
+          }
+          .fb {
+            color: #25479b;
+          }
+          .ig {
+            color: rgb(204, 89, 22);
+          }
+          .tw {
+            color: #55acee;
+          }
+          .yt {
+            color: #ff0000;
+          }
         }
       }
       .info {
@@ -103,6 +129,44 @@
                   }
                 }
               }
+              .note {
+                margin-top: 20px;
+                border-top: 1px solid rgb(230, 226, 226);
+                p {
+                  padding-top: 15px;
+                  font-size: 13px;
+                }
+              }
+              .buy {
+                border-top: 1px solid rgb(230, 226, 226);
+                margin-top: 15px;
+                padding: 15px 0;
+                .minus {
+                  margin: 0;
+                  font-size: 12px;
+                }
+                .plus {
+                  margin: 0;
+                  font-size: 12px;
+                }
+                .input-quantity {
+                  width: 40px;
+                  margin: 0 5px;
+                  font-size: 12px;
+                  input[type="number"]::-webkit-inner-spin-button,
+                  input[type="number"]::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    margin: 0;
+                  }
+                }
+                .btn-buy {
+                  width: 200px;
+                  height: 50px;
+                  margin-top: 20px;
+                }
+              }
             }
             .col2 {
               width: 30%;
@@ -111,45 +175,36 @@
           }
         }
       }
-      .buy {
-        // background-color: aqua;
-        border-top: 1px solid rgb(230, 226, 226);
-        margin-top: 15px;
-        padding: 15px 0;
-        .minus {
-          margin: 0;
-          font-size: 12px;
-        }
-        .plus {
-          margin: 0;
-          font-size: 12px;
-        }
-        .input-quantity {
-          width: 40px;
-          margin: 0 5px;
-          font-size: 12px;
-          input[type="number"]::-webkit-inner-spin-button,
-          input[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            margin: 0;
-          }
-        }
-      }
-      .btn-buy {
-        width: 200px;
-        height: 50px;
-        margin-top: 20px;
-      }
     }
     .similar-product {
       background-color: white;
-      margin: 70px 0;
+      margin: 70px 0 20px 0;
       padding: 0;
-      p{
-        padding: 25px;
-        font-size: 20px;
+      .header {
+        width: 95%;
+        margin: auto;
+        p {
+          padding: 25px 0;
+          font-size: 20px;
+          margin-bottom: 0;
+        }
+      }
+    }
+    .form-comment {
+      // height: 500px;
+      padding: 25px;
+      background-color: white;
+      .header {
+        width: 95%;
+        margin: auto;
+        p {
+          font-size: 20px;
+          margin-bottom: 0;
+        }
+      }
+      .form-send{
+        max-width: 640px;
+        width: 95%;
       }
     }
   }

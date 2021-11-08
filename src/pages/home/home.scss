@@ -170,3 +170,18 @@
     }
   }
 }
+
+
+@media screen and (max-width: 1250px){
+  .main{
+    .main-content{
+      display: block;
+      .menu-right{
+        display: none;
+      }
+    }
+    .content {
+      margin: auto;
+    }
+  }
+}
