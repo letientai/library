@@ -29,7 +29,7 @@ function Home() {
 
   setTimeout(function () {
     setLoadingPage(false);
-  }, 2000);
+  }, 1000);
 
   useEffect(() => {
     fetchData();
@@ -288,7 +288,7 @@ function Home() {
                   />
                   <p>Chế độ ban đêm</p>
                 </div>
-                <hr />
+                <hr className="hr"/>
               </div>
               <div className="ratings">
                 <h4>Đánh giá</h4>
