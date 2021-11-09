@@ -1,7 +1,7 @@
 import "./product.scss";
 import Navbar from "../../components/navbar/navbar";
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import InfoData from "../../assets/data/Infodata";
 import Rating from "@mui/material/Rating";
 import {
@@ -13,12 +13,13 @@ import {
   Comment,
   Form,
   FormInput,
-  TextArea
+  TextArea,
 } from "semantic-ui-react";
 import Buttonn from "@mui/material/Button";
 import CardItem from "../../components/cardItem/cardItem";
 import { Carousel } from "@trendyol-js/react-carousel";
 import DataComment from "../../assets/data/DataComment";
+import Footer from "../../components/footer/footer";
 function Product() {
   const location = useLocation();
   const ID = location.pathname?.split("product/")[1];
@@ -28,6 +29,7 @@ function Product() {
   const checkProduct = useState("product");
   const [loadingPage, setLoadingPage] = useState(true);
   const [quantity, setQuantity] = useState(1);
+  const history = useHistory();
 
   useEffect(() => {
     fetchData();
@@ -46,9 +48,9 @@ function Product() {
         );
       }
     }
-    // window.scrollTo({
-    //   top: 100,
-    // });
+    window.scrollTo({
+      top: 100,
+    });
     setCheckCarousel(false);
     setLoadingPage(true);
   };
@@ -80,6 +82,14 @@ function Product() {
     setCheckCarousel(true);
     setLoadingPage(false);
   }, 1000);
+
+  const moveToBuy = () => {
+    history.push(`/buy/${data.id}and${quantity}`);
+  };
+  // const onChang = () =>{
+
+  //   console.log("ahihi");
+  // }
 
   return (
     <div>
@@ -173,7 +183,11 @@ function Product() {
                           onClick={() => onchangeQuantity("plus")}
                         />
                       </div>
-                      <Buttonn variant="contained" className="btn-buy">
+                      <Buttonn
+                        variant="contained"
+                        className="btn-buy"
+                        onClick={moveToBuy}
+                      >
                         Mua ngay
                       </Buttonn>
                     </div>
@@ -195,6 +209,14 @@ function Product() {
                   ))}
                 </Carousel>
               )}
+            </div>
+          </div>
+          <div className="intro">
+            <p>Mô tả sản phẩm</p>
+            <h4>{data.name}</h4>
+            <div className="content-intro">
+              <p>{data.intro1}</p>
+              <p>{data.intro2}</p>
             </div>
           </div>
           <div className="form-comment">
@@ -236,11 +258,14 @@ function Product() {
                   <label>Message:</label>
                   <TextArea className="mess" />
                 </Form.Field>
-                <Buttonn className="btn" variant="contained" >Send</Buttonn>
+                <Buttonn className="btn" variant="contained">
+                  Send
+                </Buttonn>
               </Form>
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     </div>
   );

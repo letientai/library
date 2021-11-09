@@ -16,7 +16,7 @@ import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-
+import Footer from "../../components/footer/footer";
 function Home() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
@@ -368,6 +368,7 @@ function Home() {
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     </div>
   );
