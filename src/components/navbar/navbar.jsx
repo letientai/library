@@ -116,7 +116,7 @@ const Navbar = (props) => {
         <div className="menu" id="menu">
           <div className="close">
             <p>Best</p>
-            <div className="btn-close" onClick={close}>
+            <div className="btnClose" onClick={close}>
               <Icon name="x" className="close" />
             </div>
           </div>

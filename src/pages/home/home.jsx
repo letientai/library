@@ -216,14 +216,15 @@ function Home() {
       );
     }
   };
+ 
 
   return (
     <div>
       <Dimmer active={loadingPage} inverted className="dimmer">
         <Loader inverted>Loading</Loader>
       </Dimmer>
-      <div className={background === 1 ? "home-container1" : "home-container2"}>
-        <div className="home-top">
+      <div className={background === 1 ? "home-container1" : "home-container2"} >
+        <div className="home-top" >
           <Navbar
             passDataToParent={doSomethingWithDataFromChild}
             transcript={doSomethingWithTranscriptFromChild}

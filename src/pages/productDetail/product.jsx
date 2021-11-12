@@ -192,7 +192,15 @@ function Product() {
                       </Buttonn>
                     </div>
                   </div>
-                  <div className="col2"></div>
+                  <div className="col2">
+                    {/* <span>Điện thoại tư vấn-đặt hàng</span>
+                    <ul>
+                      <li>ấdasdasdas</li>
+                      <li>ádasdasda</li>
+                      <li>ádasdasdas</li>
+                      <li>ádadsadas</li>
+                    </ul> */}
+                  </div>
                 </div>
               </div>
             </div>
@@ -265,7 +273,7 @@ function Product() {
             </div>
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );
