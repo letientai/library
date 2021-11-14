@@ -84,7 +84,7 @@ function Product() {
   }, 1000);
 
   const moveToBuy = () => {
-    history.push(`/buy/${data.id}and${quantity}`);
+    history.push(`/library/buy/${data.id}and${quantity}`);
   };
   // const onChang = () =>{
 
