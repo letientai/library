@@ -17,6 +17,7 @@ import Typography from "@mui/material/Typography";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Footer from "../../components/footer/footer";
+import Alert from '@mui/material/Alert';
 function Home() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
@@ -199,14 +200,16 @@ function Home() {
       onChangeOption(4);
       setValue("4");
     } else if (data === "chế độ ban đêm" || data === "ban đêm") {
-      alert("Bạn đã đổi sang chế độ ban đêm");
+      // alert("Bạn đã đổi sang chế độ ban đêm");
+      <Alert severity="info">Bạn đã đổi sang chế độ ban đêm</Alert>
       setBackground(2);
     } else if (
       data === "chế độ ban ngày" ||
       data === "ban ngày" ||
       data === "morning"
     ) {
-      alert("Bạn đã đổi sang chế độ ban ngày");
+      // alert("Bạn đã đổi sang chế độ ban ngày");
+      <Alert severity="info">Bạn đã đổi sang chế độ ban đêm</Alert>
       setBackground(1);
     } else {
       setData(

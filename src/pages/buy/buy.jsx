@@ -40,7 +40,7 @@ function Buy() {
     setModalShow(false);
     setOpen(true);
     setTimeout(function () {
-      history.push("/")
+      history.push("/library")
     }, 1200);
   };
 

@@ -84,7 +84,7 @@ const Navbar = (props) => {
   };
 
   const moveToHome = () =>{
-    history.push('/')
+    history.push('/library')
   }
 
   return (
